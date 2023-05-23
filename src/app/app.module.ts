@@ -3,16 +3,52 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductListComponent } from './component/product-list.component';
+import { HomepageComponent } from './page/homepage/homepage.component';
+import { AbouPageComponent } from './page/abou-page/abou-page.component';
+import { NotFountComponent } from './page/not-fount/not-fount.component';
+import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+import { DashbroadComponent } from './page/admin/dashbroad/dashbroad.component';
+import { AdminProductComponent } from './page/admin/admin-product/admin-product.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DetaiproductComponent } from './page/detaiproduct/detaiproduct.component';
+import { AddproductComponent } from './page/admin/addproduct/addproduct.component';
+import { EditproductComponent } from './page/admin/editproduct/editproduct.component'
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { SingupComponent } from './page/singup/singup.component';
+import { SinginComponent } from './page/singin/singin.component';
+import { ThanhtoanproductComponent } from './page/thanhtoanproduct/thanhtoanproduct.component';
 
-@NgModule({
+@NgModule( {
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductListComponent,
+    HomepageComponent,
+    AbouPageComponent,
+    NotFountComponent,
+    BaseLayoutComponent,
+    AdminLayoutComponent,
+    DashbroadComponent,
+    AdminProductComponent,
+    DetaiproductComponent,
+    AddproductComponent,
+    EditproductComponent,
+    SingupComponent,
+    SinginComponent,
+    ThanhtoanproductComponent,
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule, ReactiveFormsModule
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
-})
+  bootstrap: [ AppComponent ]
+} )
 export class AppModule { }

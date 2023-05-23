@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img [src]="product.img" alt="Product Image" class="img-fluid">
+            <h4>{{ product.name }}</h4>
+            <p>{{product.price}}</p>
+            <p>{{product.chitiet}}</p>
+        </div>
+        <div class="col-md-6">
+            <form (ngSubmit)="cart()" [formGroup]="Thanhtoan">
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Số lượng:</label>
+                    <input type="number" name="quantity" formControlName="soluong" class="form-control" id="quantity">
+                </div>
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Số điện thoại:</label>
+                    <input type="number" name="quantity" formControlName="sdt" class="form-control" id="quantity">
+                </div>
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Họ và tên</label>
+                    <input type="text" class="form-control" id="fullName" formControlName="name"
+                        placeholder="Nhập họ và tên">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" formControlName="email"
+                        placeholder="Nhập địa chỉ email">
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Địa chỉ</label>
+                    <textarea class="form-control" id="address" rows="3" formControlName="diachi"
+                        placeholder="Nhập địa chỉ"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Tổng giá:</label>
+                    <span>{{ totalPrice }}</span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phương thức thanh toán:</label>
+                    <div class="form-check">
+                        <input type="radio" name="paymentMethod" formControlName="paymentMethod" value="cash"
+                            class="form-check-input">
+                        <label class="form-check-label">Tiền mặt</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="paymentMethod" formControlName="paymentMethod" value="card"
+                            class="form-check-input">
+                        <label class="form-check-label">Thẻ</label>
+                    </div>
+                </div>
+                <div *ngIf="Thanhtoan.get('paymentMethod')?.value === 'card'" class="mb-3">
+                    <label for="cardType" class="form-label">Loại thẻ:</label>
+                    <select name="cardType" formControlName="cardType" class="form-control" id="cardType">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">Mastercard</option>
+                        <option value="amex">AMEX</option>
+                    </select>
+                </div>
+                <div *ngIf="Thanhtoan.get('paymentMethod')?.value === 'card'" class="mb-3">
+                    <label for="cardNumber" class="form-label">Số thẻ:</label>
+                    <input type="text" name="cardNumber" formControlName="cardNumber" class="form-control"
+                        id="cardNumber">
+                </div>
+                <button type="submit" class="btn btn-primary">Thanh toán</button>
+            </form>
+        </div>
+    </div>
+</div>

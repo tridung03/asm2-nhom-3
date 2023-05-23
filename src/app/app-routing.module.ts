@@ -1,10 +1,51 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
+import { HomepageComponent } from './page/homepage/homepage.component';
+import { AbouPageComponent } from './page/abou-page/abou-page.component';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+import { DashbroadComponent } from './page/admin/dashbroad/dashbroad.component';
+import { NotFountComponent } from './page/not-fount/not-fount.component';
+import { AdminProductComponent } from './page/admin/admin-product/admin-product.component';
+import { DetaiproductComponent } from './page/detaiproduct/detaiproduct.component';
+import { AddproductComponent } from './page/admin/addproduct/addproduct.component';
+import { EditproductComponent } from './page/admin/editproduct/editproduct.component';
+import { SinginComponent } from './page/singin/singin.component';
+import { SingupComponent } from './page/singup/singup.component';
+import { ThanhtoanproductComponent } from './page/thanhtoanproduct/thanhtoanproduct.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '', component: BaseLayoutComponent, children: [
+      { path: '', component: HomepageComponent },
+      { path: 'about', component: AbouPageComponent },
+      { path: 'product/:id', component: DetaiproductComponent },
+      { path: 'signin', component: SinginComponent },
+      { path: 'singup', component: SingupComponent },
+      { path: 'thanhtoan/:id', component: ThanhtoanproductComponent },
+      { path: 'product/:id/thanhtoan/:id', component: ThanhtoanproductComponent },
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+
+
+
+    ]
+  },
+
+  {
+    path: 'admin', component: AdminLayoutComponent, children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashbroadComponent },
+      { path: 'product', component: AdminProductComponent },
+      { path: 'dashboard/add', component: AddproductComponent },
+      { path: 'dashboard/edit/:id', component: EditproductComponent }
+
+    ]
+  },
+  { path: '**', component: NotFountComponent }
+];
+
+@NgModule( {
+  imports: [ RouterModule.forRoot( routes ) ],
+  exports: [ RouterModule ]
+} )
 export class AppRoutingModule { }

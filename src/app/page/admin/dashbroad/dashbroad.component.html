@@ -1,0 +1,37 @@
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        DataTable Example
+    </div>
+    <div class="card-body">
+        <table class="container tableColums" id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>stt</th>
+                    <th>name</th>
+                    <th>chitiet</th>
+                    <th>price</th>
+
+                    <th> img</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let product of product,index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.chitiet}}</td>
+                    <td>{{product.price}}</td>
+                    <td><img [src]="product.img" alt=""> </td>
+                    <td></td>
+                    <td><button class="btn btn-primary" (click)="onhandleRemove(product.id!)">xoa</button> </td>
+                    <td><button class="btn btn-primary" [routerLink]="'edit/'+product.id">edit</button> </td>
+                    <td><button class="btn btn-primary" routerLink="add">add</button> </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <main><router-outlet /></main>
+</div>
