@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Iproduct } from 'src/app/common/product';
-import { ProductService } from 'src/app/service/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/common/user';
+import { UserService } from 'src/app/seviceuser/user.service';
 
 @Component( {
   selector: 'app-base-layout',
@@ -10,15 +9,37 @@ import { ActivatedRoute } from '@angular/router';
 } )
 export class BaseLayoutComponent
 {
-  product!: Iproduct[]
-  constructor ( private productService: ProductService )
-  {
-    this.productService.getProduct().subscribe( data =>
-    {
-      console.log( this.product = data );
+  loggedIn: boolean = false;
+  name: string | undefined;
 
-    } )
+  constructor ( private userService: UserService )
+  {
+    this.checkLoggedIn();
   }
 
+  checkLoggedIn ()
+  {
+    this.loggedIn = this.userService.isLoggedIn();
+    if ( this.loggedIn )
+    {
+      const userId = 1; // Thay thế bằng userId thực tế của người dùng
+      this.userService.getUser( userId ).subscribe(
+        ( user: User ) =>
+        {
+          this.name = user.name; // Gán giá trị `name` từ thông tin người dùng
+        },
+        ( error: any ) =>
+        {
+          console.log( 'Lỗi khi lấy thông tin người dùng', error );
+        }
+      );
+    }
+  }
 
+  logout ()
+  {
+    this.userService.logout();
+    this.loggedIn = false;
+    this.name = undefined;
+  }
 }

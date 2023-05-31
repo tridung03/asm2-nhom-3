@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { Observable } from "rxjs"
-import { Iproduct, Login, LoginResponse, User, thanhtoan } from '../common/product';
+import { Iproduct, thanhtoan } from '../common/product';
+import { Login, LoginResponse, User } from '../common/user';
 
 @Injectable( {
   providedIn: 'root'
 } )
 export class ProductService
 {
+  private apiUrl = 'http://localhost:3000';
 
   constructor ( private http: HttpClient )
   { }
@@ -31,18 +33,8 @@ export class ProductService
   {
     return this.http.put<Iproduct>( `http://localhost:3000/products/${ product.id }`, product )
   }
-  singup ( body: User ): Observable<User>
-  {
-    return this.http.post<User>( "http://localhost:3000/" + "users", body )
-  }
-  login ( body: Login ): Observable<Login>
-  {
-    return this.http.post<Login>( "http://localhost:3000/users", body );
-  }
-  uploadImage ( file: FormData ): Observable<any>
-  {
-    return this.http.post<any>( 'http://localhost:3000/products', file );
-  }
+
+
   thanhToan ( body: thanhtoan ): Observable<thanhtoan>
   {
     return this.http.post<thanhtoan>( "http://localhost:3000/cart", body )

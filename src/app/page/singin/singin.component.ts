@@ -1,25 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Login } from 'src/app/common/product';
-import { ProductService } from 'src/app/service/product.service';
+import { Router } from '@angular/router';
+import { Login } from 'src/app/common/user';
+import { UserService } from 'src/app/seviceuser/user.service';
 
 @Component( {
-  selector: 'app-login',
-  template: `
-    <h2>Login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" formControlName="user">
-      </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" formControlName="password">
-      </div>
-      <button type="submit">Login</button>
-    </form>
-    <div *ngIf="errorMessage">{{ errorMessage }}</div>
-  `,
+  selector: 'app-singin',
+  templateUrl: './singin.component.html',
+  styleUrls: [ './singin.component.scss' ]
 } )
 export class SinginComponent
 {
@@ -27,12 +15,12 @@ export class SinginComponent
   errorMessage: string | undefined;
 
   constructor (
-    private formBuilder: FormBuilder,
-    private authenticationService: ProductService
+    private formBuilder: FormBuilder, private router: Router,
+    private authenticationService: UserService
   )
   {
     this.loginForm = this.formBuilder.group( {
-      user: [ '', Validators.required ],
+      email: [ '', Validators.required ],
       password: [ '', Validators.required ]
     } );
   }
@@ -44,8 +32,9 @@ export class SinginComponent
       return;
     }
     const users: Login = {
-      user: this.loginForm.value.user || "",
-      password: this.loginForm.value.password || ""
+      email: this.loginForm.value.email || "",
+      password: this.loginForm.value.password || "",
+
     }
 
 
@@ -54,11 +43,37 @@ export class SinginComponent
         response =>
         {
           // Xử lý phản hồi từ máy chủ
+          if ( response.accessToken )
+          {
+            // Lưu trữ token vào Local Storage
+            localStorage.setItem( 'accessToken', response.accessToken );
+
+            const isAdmin = response.user.role === "admin";
+            if ( isAdmin )
+            {
+              this.router.navigate( [ '/admin' ] ); // Chuyển hướng đến trang admin
+            } else
+            {
+              this.router.navigate( [ '/' ] ); // Chuyển hướng đến trang chủ
+            }
+            // Tiến hành chuyển hướng hoặc thực hiện các hành động khác sau khi xác thực thành công
+          } else
+          {
+            this.errorMessage = 'Invalid response from server';
+          }
         },
         error =>
         {
           this.errorMessage = 'An error occurred';
         }
       );
+  }
+  get email ()
+  {
+    return this.loginForm.get( "email" )
+  }
+  get password ()
+  {
+    return this.loginForm.get( "password" )
   }
 }

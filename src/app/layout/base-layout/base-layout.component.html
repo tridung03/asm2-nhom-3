@@ -22,15 +22,30 @@
                 </li>
             </ul>
             <form class="d-flex">
-                <a routerLink="signin"><button class="btn btn-outline-dark" type="submit">
+                <div *ngIf="loggedIn; else loggedOutNav">
+                    <button class="btn btn-outline-dark" type="submit">
                         <i class="bi-cart-fill me-1"></i>
-
-                        ĐĂNG NHẬP
-                    </button></a>
-                <a routerLink="singup"><button class="btn btn-outline-dark" type="submit">
+                        {{ name }}
+                    </button>
+                    <button class="btn btn-outline-dark" type="submit" (click)="logout()">
                         <i class="bi-cart-fill me-1"></i>
-                        ĐĂNG KÍ
-                    </button></a>
+                        Logout
+                    </button>
+                </div>
+                <ng-template #loggedOutNav>
+                    <a routerLink="signin">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            ĐĂNG NHẬP
+                        </button>
+                    </a>
+                    <a routerLink="signup">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            ĐĂNG KÍ
+                        </button>
+                    </a>
+                </ng-template>
                 <button class="btn btn-outline-dark" type="submit">
                     <i class="bi-cart-fill me-1"></i>
                     Cart
@@ -41,6 +56,5 @@
     </div>
 </nav>
 <main>
-
     <router-outlet />
 </main>

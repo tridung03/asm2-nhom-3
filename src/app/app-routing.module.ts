@@ -13,6 +13,7 @@ import { EditproductComponent } from './page/admin/editproduct/editproduct.compo
 import { SinginComponent } from './page/singin/singin.component';
 import { SingupComponent } from './page/singup/singup.component';
 import { ThanhtoanproductComponent } from './page/thanhtoanproduct/thanhtoanproduct.component';
+import { GiohangproductComponent } from './page/giohangproduct/giohangproduct.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,9 @@ const routes: Routes = [
       { path: 'about', component: AbouPageComponent },
       { path: 'product/:id', component: DetaiproductComponent },
       { path: 'signin', component: SinginComponent },
-      { path: 'singup', component: SingupComponent },
+      { path: 'signup', component: SingupComponent },
+      { path: 'giohang', component: GiohangproductComponent },
+
       { path: 'thanhtoan/:id', component: ThanhtoanproductComponent },
       { path: 'product/:id/thanhtoan/:id', component: ThanhtoanproductComponent },
 
@@ -33,6 +36,11 @@ const routes: Routes = [
 
   {
     path: 'admin', component: AdminLayoutComponent, children: [
+      {
+        path: 'admin',
+        component: AdminProductComponent,
+        canActivate: [], // Sử dụng AuthGuard để kiểm tra quyền truy cập
+      },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashbroadComponent },
       { path: 'product', component: AdminProductComponent },

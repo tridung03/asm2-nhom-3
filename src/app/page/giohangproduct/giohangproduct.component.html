@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Giỏ hàng</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Sản phẩm</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">Đơn giá</th>
+                <th scope="col">Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of cartItems">
+                <td>{{ product.name }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.quantity * product.price }}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-end fw-bold">Tổng giá trị:</td>
+                <td>{{ calculateTotalPrice() }}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

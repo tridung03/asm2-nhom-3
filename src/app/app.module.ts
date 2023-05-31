@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './component/product-list.component';
 import { HomepageComponent } from './page/homepage/homepage.component';
 import { AbouPageComponent } from './page/abou-page/abou-page.component';
 import { NotFountComponent } from './page/not-fount/not-fount.component';
@@ -20,11 +19,12 @@ import { FormsModule } from '@angular/forms';
 import { SingupComponent } from './page/singup/singup.component';
 import { SinginComponent } from './page/singin/singin.component';
 import { ThanhtoanproductComponent } from './page/thanhtoanproduct/thanhtoanproduct.component';
+import { GiohangproductComponent } from './page/giohangproduct/giohangproduct.component';
+import { CheckuserComponent } from './page/admin/checkuser/checkuser.component';
 
 @NgModule( {
   declarations: [
     AppComponent,
-    ProductListComponent,
     HomepageComponent,
     AbouPageComponent,
     NotFountComponent,
@@ -38,6 +38,8 @@ import { ThanhtoanproductComponent } from './page/thanhtoanproduct/thanhtoanprod
     SingupComponent,
     SinginComponent,
     ThanhtoanproductComponent,
+    GiohangproductComponent,
+    CheckuserComponent,
 
 
   ],

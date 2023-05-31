@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { User } from 'src/app/common/product';
-import { ProductService } from 'src/app/service/product.service';
-import * as bcrypt from 'bcryptjs';
 import { Router } from '@angular/router';
+import { User } from 'src/app/common/user';
+import { UserService } from 'src/app/seviceuser/user.service';
 
 @Component( {
   selector: 'app-singup',
@@ -12,36 +11,34 @@ import { Router } from '@angular/router';
 } )
 export class SingupComponent
 {
-
-  constructor ( private fb: FormBuilder, private router: Router, private productService: ProductService )
+  users!: User
+  singupForm: FormGroup
+  constructor ( private fb: FormBuilder, private router: Router, private productService: UserService )
   {
+    this.singupForm = this.fb.group( {
+      email: [ "", [ Validators.required, Validators.email ] ],
+      name: [ "", [ Validators.required, Validators.pattern( "[a-zA-Z]+$" ) ] ],
+      password: [ "", [ Validators.required, Validators.minLength( 5 ) ] ],
+      confirmPassword: [ "", [ Validators.required, Validators.minLength( 5 ) ] ],
 
+    } );
   }
-  singupForm = this.fb.group( {
-    user: [ "", [ Validators.required, Validators.email ] ],
-    lastname: [ "", [ Validators.required, Validators.pattern( "[a-zA-Z]+$" ) ] ],
-    firstname: [ "", [ Validators.required, Validators.pattern( "[a-zA-Z]+$" ) ] ],
-    password: [ "", [ Validators.required, Validators.minLength( 5 ) ] ],
-    comfirmPassword: [ "", [ Validators.required, Validators.minLength( 5 ) ] ],
 
-  } );
 
 
   singupUser (): void
   {
     console.warn( this.singupForm.value );
     const user: User = {
-      user: this.singupForm.value.user || "",
-      lastname: this.singupForm.value.lastname || "",
-      firstname: this.singupForm.value.firstname || "",
+      role: this.singupForm.value.role || "",
+
+      name: this.singupForm.value.name || "",
+      email: this.singupForm.value.email || "",
       password: this.singupForm.value.password || "",
-      comfirmPassword: this.singupForm.value.comfirmPassword || ""
+      confirmPassword: this.singupForm.value.confirmPassword || ""
     };
 
-    //ma hoa mat khau 
-    const hasspassword = bcrypt.hashSync( user.password, 10 )
-    //gan mat khau dc ma hoa cho user
-    user.password = hasspassword
+
     this.productService.singup( user ).subscribe( ( result ) =>
     {
       console.log( result );
@@ -50,24 +47,21 @@ export class SingupComponent
     } )
 
   }
-  get user ()
+  get name ()
   {
-    return this.singupForm.get( "user" )
+    return this.singupForm.get( "name" )
   }
   get password ()
   {
     return this.singupForm.get( "password" )
   }
-  get lastname ()
+
+  get email ()
   {
-    return this.singupForm.get( "lastname" )
+    return this.singupForm.get( "email" )
   }
-  get firstname ()
+  get confirmPassword ()
   {
-    return this.singupForm.get( "firstname" )
-  }
-  get comfirmPassword ()
-  {
-    return this.singupForm.get( "comfirmPassword" )
+    return this.singupForm.get( "confirmPassword" )
   }
 }
