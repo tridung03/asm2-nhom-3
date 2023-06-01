@@ -21,6 +21,8 @@ import { SinginComponent } from './page/singin/singin.component';
 import { ThanhtoanproductComponent } from './page/thanhtoanproduct/thanhtoanproduct.component';
 import { GiohangproductComponent } from './page/giohangproduct/giohangproduct.component';
 import { CheckuserComponent } from './page/admin/checkuser/checkuser.component';
+import { EdituserComponent } from './page/admin/edituser/edituser.component';
+import { ListuserComponent } from './page/admin/listuser/listuser.component';
 
 @NgModule( {
   declarations: [
@@ -40,6 +42,8 @@ import { CheckuserComponent } from './page/admin/checkuser/checkuser.component';
     ThanhtoanproductComponent,
     GiohangproductComponent,
     CheckuserComponent,
+    EdituserComponent,
+    ListuserComponent,
 
 
   ],

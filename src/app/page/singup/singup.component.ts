@@ -21,10 +21,16 @@ export class SingupComponent
       password: [ "", [ Validators.required, Validators.minLength( 5 ) ] ],
       confirmPassword: [ "", [ Validators.required, Validators.minLength( 5 ) ] ],
 
-    } );
+    }, { Validators: this.checkpassword } );
   }
 
-
+  checkpassword ( form: FormGroup )
+  {
+    const password = form.get( "password" )?.value;
+    const confirmPassword = form.get( "confirmPassword" )?.value
+    if ( password === confirmPassword ) return null;
+    return { notMatch: true }
+  }
 
   singupUser (): void
   {

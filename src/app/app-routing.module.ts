@@ -14,6 +14,7 @@ import { SinginComponent } from './page/singin/singin.component';
 import { SingupComponent } from './page/singup/singup.component';
 import { ThanhtoanproductComponent } from './page/thanhtoanproduct/thanhtoanproduct.component';
 import { GiohangproductComponent } from './page/giohangproduct/giohangproduct.component';
+import { ListuserComponent } from './page/admin/listuser/listuser.component';
 
 const routes: Routes = [
   {
@@ -36,13 +37,11 @@ const routes: Routes = [
 
   {
     path: 'admin', component: AdminLayoutComponent, children: [
-      {
-        path: 'admin',
-        component: AdminProductComponent,
-        canActivate: [], // Sử dụng AuthGuard để kiểm tra quyền truy cập
-      },
+
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashbroadComponent },
+      { path: 'listuser', component: ListuserComponent },
+
       { path: 'product', component: AdminProductComponent },
       { path: 'dashboard/add', component: AddproductComponent },
       { path: 'dashboard/edit/:id', component: EditproductComponent }

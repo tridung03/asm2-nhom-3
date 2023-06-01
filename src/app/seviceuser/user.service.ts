@@ -26,6 +26,15 @@ export class UserService
     const url = `${ this.apiUrl }/users/${ id }`;
     return this.http.get<User>( url );
   }
+  remove ( id: number ): Observable<User>
+  {
+    const url = `${ this.apiUrl }/users/${ id }`;
+    return this.http.delete<User>( url );
+  }
+  getAll (): Observable<User[]>
+  {
+    return this.http.get<User[]>( "http://localhost:3000/users" );
+  }
   getUsername (): string
   {
     // Trả về tên người dùng đã đăng ký

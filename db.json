@@ -1,22 +1,6 @@
 {
   "users": [
     {
-      "user": "honsgasdf@gmail.com",
-      "lastname": "hong",
-      "firstname": "giang",
-      "password": "$2a$10$YHpyDkIzRcTIBiChXgDWv.LMjIieZAZjEq2v67MQQIZgBweYgujru",
-      "comfirmPassword": "123456",
-      "id": 1
-    },
-    {
-      "user": "giangnhph23819@fpt.edu.vn",
-      "lastname": "adasdsad",
-      "firstname": "store",
-      "password": "$2a$10$cip9uE5l7dxngsyu4ufybe78Z4ZKmLP.UAewiT2L8pSAkTk/7Fs4G",
-      "comfirmPassword": "123456",
-      "id": 2
-    },
-    {
       "email": "giangnhph23819@fpt.edu.vn",
       "password": "$2a$10$WMgoJDqYRIDtNuYMlfI8DOsh0HG/WQD83L/jGI.r2Ms7HNxAzYAXi",
       "name": "giangnhph23819",
@@ -73,6 +57,14 @@
       "name": "giang",
       "confirmPassword": "123456",
       "id": 10
+    },
+    {
+      "email": "nhom3@gmail.com",
+      "password": "$2a$10$0tZfEFN/hLZ3fK9anUUhZ.I4ImhDEmffbKJLW/mOyL/GZuIVyCY7C",
+      "role": "",
+      "name": "giang",
+      "confirmPassword": "123456",
+      "id": 11
     }
   ],
   "products": [

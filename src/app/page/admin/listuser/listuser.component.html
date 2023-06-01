@@ -9,10 +9,14 @@
                 <tr>
                     <th>stt</th>
                     <th>name</th>
-                    <th>chitiet</th>
-                    <th>price</th>
+                    <th>email</th>
+                    <th>password</th>
+                    <th>comfim</th>
 
-                    <th> img</th>
+                    <th>chuc vu</th>
+
+
+
 
                 </tr>
             </thead>
@@ -21,13 +25,15 @@
                 <tr *ngFor="let product of product,index as i">
                     <td>{{i+1}}</td>
                     <td>{{product.name}}</td>
-                    <td>{{product.chitiet}}</td>
-                    <td>{{product.price}}</td>
-                    <td><img [src]="product.img" alt=""> </td>
+                    <td>{{product.email}}</td>
+                    <td>{{product.password}}</td>
+                    <td>{{product.confirmPassword}}</td>
+                    <td>{{product.role}}</td>
+
+
                     <td></td>
                     <td><button class="btn btn-primary" (click)="onhandleRemove(product.id!)">xoa</button> </td>
                     <td><button class="btn btn-primary" [routerLink]="'edit/'+product.id">edit</button> </td>
-                    <td><button class="btn btn-primary" routerLink="add">add</button> </td>
                 </tr>
 
             </tbody>

@@ -1,4 +1,4 @@
-<div id="second">
+<div class="container" id=" second">
     <div class="myform form ">
         <div class="logo mb-3">
             <div class="col-md-12 text-center">
@@ -31,6 +31,14 @@
                     comfirmPassword la
                     bat
                     buoc</span>
+                <div *ngIf="
+                                    singupForm.hasError('notMatch') &&
+                                    (singupForm.get('confirmPassword')?.touched ||
+                                        singupForm.get('confirmPassword')?.dirty)
+                                ">
+                    Mật khẩu không khớp
+                </div>
+
             </div>
             <div class="col-md-12 text-center mb-3">
                 <button type="submit" [disabled]="!singupForm.valid" class=" btn btn-block mybtn btn-primary tx-tfm">Get
