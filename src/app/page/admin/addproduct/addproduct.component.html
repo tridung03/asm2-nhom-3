@@ -21,6 +21,12 @@
             <label for="productPrice" class="form-label">anh</label>
             <input type="text" name="img" class="form-control" [(ngModel)]="product.img" id="productPrice">
         </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Category</label>
+            <select name="categoryId" [(ngModel)]="product.categoryId">
+                <option *ngFor="let category of categories;" [value]="category.id">{{category.name}}</option>
+            </select>
+        </div>
         <button type="submit" (click)="onhandleadd()" class="btn btn-primary">Thêm</button>
     </form>
 </div>

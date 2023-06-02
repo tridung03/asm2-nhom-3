@@ -23,6 +23,10 @@ import { GiohangproductComponent } from './page/giohangproduct/giohangproduct.co
 import { CheckuserComponent } from './page/admin/checkuser/checkuser.component';
 import { EdituserComponent } from './page/admin/edituser/edituser.component';
 import { ListuserComponent } from './page/admin/listuser/listuser.component';
+import { ProductpageComponent } from './page/productpage/productpage.component';
+import { CategoryListComponent } from './page/admin/category-list/category-list.component';
+import { EditCategoryComponent } from './page/admin/edit-category/edit-category.component';
+import { AddcategoryComponent } from './page/admin/addcategory/addcategory.component';
 
 @NgModule( {
   declarations: [
@@ -44,6 +48,10 @@ import { ListuserComponent } from './page/admin/listuser/listuser.component';
     CheckuserComponent,
     EdituserComponent,
     ListuserComponent,
+    ProductpageComponent,
+    CategoryListComponent,
+    EditCategoryComponent,
+    AddcategoryComponent,
 
 
   ],

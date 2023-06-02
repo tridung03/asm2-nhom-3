@@ -15,6 +15,10 @@ import { SingupComponent } from './page/singup/singup.component';
 import { ThanhtoanproductComponent } from './page/thanhtoanproduct/thanhtoanproduct.component';
 import { GiohangproductComponent } from './page/giohangproduct/giohangproduct.component';
 import { ListuserComponent } from './page/admin/listuser/listuser.component';
+import { ProductpageComponent } from './page/productpage/productpage.component';
+import { CategoryListComponent } from './page/admin/category-list/category-list.component';
+import { AddcategoryComponent } from './page/admin/addcategory/addcategory.component';
+import { EditCategoryComponent } from './page/admin/edit-category/edit-category.component';
 
 const routes: Routes = [
   {
@@ -24,6 +28,15 @@ const routes: Routes = [
       { path: 'product/:id', component: DetaiproductComponent },
       { path: 'signin', component: SinginComponent },
       { path: 'signup', component: SingupComponent },
+      {
+        path: 'product', children: [
+          { path: "", component: ProductpageComponent },
+          { path: ":id", component: DetaiproductComponent },
+
+
+        ]
+      },
+
       { path: 'giohang', component: GiohangproductComponent },
 
       { path: 'thanhtoan/:id', component: ThanhtoanproductComponent },
@@ -41,6 +54,12 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashbroadComponent },
       { path: 'listuser', component: ListuserComponent },
+      { path: 'category', component: CategoryListComponent },
+      { path: 'addcategory', component: AddcategoryComponent },
+
+      { path: 'editcategory/:id', component: EditCategoryComponent },
+
+
 
       { path: 'product', component: AdminProductComponent },
       { path: 'dashboard/add', component: AddproductComponent },

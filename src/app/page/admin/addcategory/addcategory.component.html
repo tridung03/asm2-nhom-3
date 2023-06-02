@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Thêm sản phẩm</h1>
+    <form>
+        <div class="mb-3">
+            <label for="productName" class="form-label">Tên sản phẩm</label>
+            <input type="text" name="name" [(ngModel)]="categorys.name" class="form-control" id="productName"
+                placeholder="Nhập tên sản phẩm">
+            <span></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="productPrice" class="form-label">anh</label>
+            <input type="text" name="img" class="form-control" [(ngModel)]="categorys.img" id="productPrice">
+        </div>
+
+        <button type="submit" (click)="onhandleadd()" class="btn btn-primary">Thêm</button>
+    </form>
+</div>

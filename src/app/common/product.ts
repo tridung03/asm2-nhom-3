@@ -5,6 +5,7 @@ export interface Iproduct
     chitiet: string;
     price: number,
     img: string
+    categoryId?: number
 }
 
 export interface thanhtoan

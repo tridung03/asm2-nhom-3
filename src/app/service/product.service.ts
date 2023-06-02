@@ -33,7 +33,10 @@ export class ProductService
   {
     return this.http.put<Iproduct>( `http://localhost:3000/products/${ product.id }`, product )
   }
-
+  ListProductByCate (): Observable<any>
+  {
+    return this.http.get( "http://localhost:3000/products" )
+  }
 
   thanhToan ( body: thanhtoan ): Observable<thanhtoan>
   {

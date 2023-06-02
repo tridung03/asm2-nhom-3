@@ -9,11 +9,8 @@
                 <tr>
                     <th>stt</th>
                     <th>name</th>
-                    <th>chitiet</th>
-                    <th>price</th>
-
                     <th> img</th>
-                    <th> category</th>
+
 
 
                 </tr>
@@ -23,10 +20,9 @@
                 <tr *ngFor="let product of product,index as i">
                     <td>{{i+1}}</td>
                     <td>{{product.name}}</td>
-                    <td>{{product.chitiet}}</td>
-                    <td>{{product.price}}</td>
+
                     <td><img [src]="product.img" alt=""> </td>
-                    <td>{{product.categoryId}}</td>
+
                     <td><button class="btn btn-primary" (click)="onhandleRemove(product.id!)">xoa</button> </td>
                     <td><button class="btn btn-primary" [routerLink]="'edit/'+product.id">edit</button> </td>
                     <td><button class="btn btn-primary" routerLink="add">add</button> </td>

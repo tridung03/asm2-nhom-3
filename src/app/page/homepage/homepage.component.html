@@ -7,6 +7,14 @@
         </div>
     </div>
 </header>
+<section class="text-center mt-4 bg-light-subtle" *ngIf="category && category.length">
+    <div class="row rounded">
+        <a href="" class="col-2 shadow-sm" *ngFor="let category of category; index as i">
+            <img [src]="category.img" alt="" width="120">
+            <p>{{category.name}}</p>
+        </a>
+    </div>
+</section>
 <!-- Section-->
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
