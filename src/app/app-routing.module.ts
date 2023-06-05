@@ -33,8 +33,10 @@ const routes: Routes = [
           { path: "", component: ProductpageComponent },
           { path: ":id", component: DetaiproductComponent },
 
-
         ]
+      },
+      {
+        path:'admin/category/add', component: AddcategoryComponent
       },
 
       { path: 'giohang', component: GiohangproductComponent },

@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http"
 import { Observable } from "rxjs"
 import { Iproduct, thanhtoan } from '../common/product';
 import { Login, LoginResponse, User } from '../common/user';
+import { category} from'../common/category'
 
 @Injectable( {
   providedIn: 'root'
@@ -41,5 +42,11 @@ export class ProductService
   thanhToan ( body: thanhtoan ): Observable<thanhtoan>
   {
     return this.http.post<thanhtoan>( "http://localhost:3000/cart", body )
+  }
+
+  //category
+  addCategory ( category: category ): Observable<category>
+  {
+    return this.http.post<category>( "http://localhost:3000/category", category )
   }
 }

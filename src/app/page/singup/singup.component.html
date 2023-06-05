@@ -1,33 +1,40 @@
-<div class="container" id=" second">
-    <div class="myform form ">
-        <div class="logo mb-3">
-            <div class="col-md-12 text-center">
-                <h1>Signup</h1>
-            </div>
-        </div>
-        <form action="#" [formGroup]="singupForm" (ngSubmit)="singupUser()" name="registration">
-            <div class="form-group">
-                <label for="exampleInputEmail1"> Name</label>
-                <input type="text" name="firstname" class="form-control" formControlName="name">
+
+<section class="vh-100 bg-image">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form action="#" [formGroup]="singupForm" (ngSubmit)="singupUser()" name="registration">
+
+                <div class="form-outline mb-4">
+                  <input type="text" name="firstname"  id="form3Example1cg" class="form-control form-control-lg" formControlName="name"/>
+                  <label class="form-label" for="form3Example1cg">Your Name</label>
                 <span *ngIf="name && name.invalid && name.touched">truong fistname la bat buoc</span>
 
-            </div>
+                </div>
 
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" name="email" class="form-control" formControlName="email">
+                <div class="form-outline mb-4">
+                  <input type="email" name="email" id="form3Example3cg" class="form-control form-control-lg"formControlName="email" />
+                  <label class="form-label" for="form3Example3cg">Your Email</label>
                 <span *ngIf="email && email.invalid && email.touched">truong email la bat buoc</span>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Password</label>
-                <input type="password" name="password" class="form-control" formControlName="password">
-                <span *ngIf="password&& password.invalid && password.touched">truong password la bat
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password"  name="password" id="form3Example4cg" class="form-control form-control-lg" formControlName="password"/>
+                  <label class="form-label" for="form3Example4cg">Password</label>
+                  <span *ngIf="password&& password.invalid && password.touched">truong password la bat
                     buoc</span>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">comfirm</label>
-                <input type="password" name="password" class="form-control" formControlName="confirmPassword">
-                <span *ngIf="confirmPassword&& confirmPassword.invalid && confirmPassword.touched">truong
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" name="password" id="form3Example4cdg" class="form-control form-control-lg" formControlName="confirmPassword" />
+                  <label class="form-label" for="form3Example4cdg">Confirm password</label>
+                  <span *ngIf="confirmPassword&& confirmPassword.invalid && confirmPassword.touched">truong
                     comfirmPassword la
                     bat
                     buoc</span>
@@ -38,19 +45,29 @@
                                 ">
                     Mật khẩu không khớp
                 </div>
-
-            </div>
-            <div class="col-md-12 text-center mb-3">
-                <button type="submit" [disabled]="!singupForm.valid" class=" btn btn-block mybtn btn-primary tx-tfm">Get
-                    Started For
-                    Free</button>
-            </div>
-            <div class="col-md-12 ">
-                <div class="form-group">
-                    <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
                 </div>
-            </div>
-        </form>
-    </div>
 
-</div>
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"  [disabled]="!singupForm.valid"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Sign up</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/signin"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
