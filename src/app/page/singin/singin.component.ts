@@ -29,8 +29,7 @@ export class SinginComponent
   {
     if ( this.loginForm.invalid )
     {
-      return;
-    }
+      return;}
     const users: Login = {
       email: this.loginForm.value.email || "",
       password: this.loginForm.value.password || "",
