@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CategoryService } from 'src/app/category/category.service';
-import { Iproduct } from 'src/app/common/product';
+import { category } from 'src/app/interface/category';
+import { Iproduct } from 'src/app/interface/product';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component( {
@@ -11,69 +12,75 @@ import { ProductService } from 'src/app/service/product.service';
 } )
 export class ProductpageComponent
 {
-  products!: Iproduct[]
-  categories: any = []
+  products!: Iproduct[];
+  categories: category[] = [];
   cateId: any;
   filteredProducts: Iproduct[] = [];
+
   constructor (
-    private ProductService: ProductService,
-    private CategoryService: CategoryService,
+    private productService: ProductService,
+    private categoryService: CategoryService,
     private activatedRoute: ActivatedRoute,
     private route: Router
-
   )
   {
     this.activatedRoute.queryParams.subscribe( ( params: Params ) =>
     {
       let id = params[ 'id' ];
       console.log( id );
-    } )
+    } );
   }
 
   ngOnInit ()
   {
     this.getAllProduct();
+    this.getAllCategory();
+
     this.activatedRoute.paramMap.subscribe( params =>
     {
       this.cateId = params.get( 'id' );
       console.log( this.cateId );
       this.filterProductsByCategory();
-    } )
+    } );
     this.getAllCategory();
   }
 
   getAllProduct ()
   {
-    this.ProductService.getProduct().subscribe( ( data ) =>
+    this.productService.getProduct().subscribe( data =>
     {
       this.products = data;
       this.filterProductsByCategory();
-    } )
+    } );
   }
 
   getAllCategory ()
   {
-    this.CategoryService.getAllCategory().subscribe( ( data ) =>
+    this.categoryService.getAllCategory().subscribe( data =>
     {
-      this.categories = data
-    } )
+      this.categories = data;
+    } );
   }
-
   filterProductsByCategory ()
   {
     if ( this.cateId )
     {
-      this.filteredProducts = this.products.filter( product => product.categoryId === this.cateId )
-    }
-    else
+      this.filteredProducts = this.products.filter(
+        product => product.categoryId === this.cateId
+      );
+    } else
     {
       this.filteredProducts = this.products;
     }
   }
 
+
+
+
   onCategoryClick ( categoryId: string )
   {
     this.cateId = categoryId;
-    this.route.navigate( [ '/product', categoryId ] );
+    this.filterProductsByCategory();
   }
+
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CategoryService } from 'src/app/category/category.service';
-import { category } from 'src/app/common/category';
-import { Iproduct } from 'src/app/common/product';
+import { category } from 'src/app/interface/category';
+import { Iproduct } from 'src/app/interface/product';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component( {

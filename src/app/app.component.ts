@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Iproduct } from './common/product';
+import { Iproduct } from './interface/product';
 
 @Component( {
   selector: 'app-root',

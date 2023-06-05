@@ -31,7 +31,7 @@ const routes: Routes = [
       {
         path: 'product', children: [
           { path: "", component: ProductpageComponent },
-          { path: ":id", component: DetaiproductComponent },
+          // { path: ":id", component: DetaiproductComponent },
 
 
         ]
@@ -55,9 +55,9 @@ const routes: Routes = [
       { path: 'dashboard', component: DashbroadComponent },
       { path: 'listuser', component: ListuserComponent },
       { path: 'category', component: CategoryListComponent },
-      { path: 'addcategory', component: AddcategoryComponent },
+      { path: 'category/addcategory', component: AddcategoryComponent },
 
-      { path: 'editcategory/:id', component: EditCategoryComponent },
+      { path: 'category/editcategory/:id', component: EditCategoryComponent },
 
 
 
