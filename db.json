@@ -73,6 +73,14 @@
       "name": "nguyenducnam",
       "confirmPassword": "123456",
       "id": 14
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "$2a$10$QlbUZycJNLjPTkUAfG5dcelXrPoldp1u81lHQ1PZcCx0ehYdSS90q",
+      "role": "",
+      "name": "namnguyenduc",
+      "confirmPassword": "123456",
+      "id": 15
     }
   ],
   "category": [
@@ -165,6 +173,54 @@
       "diachi": "ha noi",
       "soluong": 2,
       "id": 5
+    },
+    {
+      "name": "Nguyễn Đức Nam",
+      "sdt": 328397661,
+      "email": "nguyenducnam135@gmail.com",
+      "diachi": "123",
+      "soluong": 2,
+      "id": 6
+    },
+    {
+      "name": "Nguyễn Đức Nam",
+      "sdt": 328397661,
+      "email": "nguyenducnam135@gmail.com",
+      "diachi": "123",
+      "soluong": 2,
+      "id": 7
+    },
+    {
+      "name": "Nguyễn Đức Nam",
+      "sdt": 328397661,
+      "email": "nguyenducnam135@gmail.com",
+      "diachi": "123",
+      "soluong": 2,
+      "id": 8
+    },
+    {
+      "name": "Nguyễn Đức Nam",
+      "sdt": 328397661,
+      "email": "nguyenducnam135@gmail.com",
+      "diachi": "123",
+      "soluong": 2,
+      "id": 9
+    },
+    {
+      "name": "Nguyễn Đức Nam",
+      "sdt": 328397661,
+      "email": "nguyenducnam135@gmail.com",
+      "diachi": "123",
+      "soluong": 2,
+      "id": 10
+    },
+    {
+      "name": "Nguyễn Đức Nam",
+      "sdt": 328397661,
+      "email": "nguyenducnam135@gmail.com",
+      "diachi": "123",
+      "soluong": 2,
+      "id": 11
     }
   ]
 }
