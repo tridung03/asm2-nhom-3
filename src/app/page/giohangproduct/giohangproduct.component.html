@@ -3,25 +3,46 @@
     <table class="table">
         <thead>
             <tr>
+                <th scope="col">stt</th>
+
                 <th scope="col">Sản phẩm</th>
                 <th scope="col">Số lượng</th>
                 <th scope="col">Đơn giá</th>
+                <th scope="col">ảnh</th>
+
                 <th scope="col">Thành tiền</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of cartItems">
+            <tr *ngFor="let product of carts,index as i">
+                <td>{{i+1}}</td>
                 <td>{{ product.name }}</td>
-                <td>{{ product.quantity }}</td>
+                <td>
+                    <input (change)="updateQuantity(i,$event)" type="number" style="width:60px;"
+                        [value]="product.quantity">
+                </td>
                 <td>{{ product.price }}</td>
-                <td>{{ product.quantity * product.price }}</td>
+                <td><img [src]="product.img" alt=""></td>
+
+
+                <td>{{ subtotal(product)}}</td>
+                <td><button (click)="remove(i)" class="btn btn-sm btn-danger">xoa</button></td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="3" class="text-end fw-bold">Tổng giá trị:</td>
-                <td>{{ calculateTotalPrice() }}</td>
+
+
             </tr>
         </tfoot>
     </table>
+    <hr>
+    <div class="text-center">
+        <h2>tổng số tiền:{{Totalprice}} </h2>
+
+        <a routerLink="/" class="btn btn-sm btn-primary">tiếp tục mua hàng </a>
+        <button (click)="clearCart()" class="btn btn-sm btn-danger">xóa hết giỏ hàng </button>
+
+    </div>
 </div>

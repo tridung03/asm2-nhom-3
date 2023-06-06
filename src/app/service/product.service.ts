@@ -42,4 +42,41 @@ export class ProductService
   {
     return this.http.post<thanhtoan>( "http://localhost:3000/cart", body )
   }
+  getCart ()
+  {
+    let cartJson = sessionStorage.getItem( "cart" );
+    if ( cartJson )
+    {
+      return JSON.parse( cartJson )
+    } else
+    {
+      return []
+    }
+  }
+  saveCart ( carts: any )
+  {
+    let cartJson = JSON.stringify( carts )
+    sessionStorage.setItem( "cart", cartJson )
+
+  }
+  getCartTotalPrice ()
+  {
+    let carts = this.getCart();
+    let total: number = 0;
+    carts.forEach( ( item: any ) =>
+    {
+      total += item.quantity * item.price;
+    } );
+    return total
+  }
+  getCartquantity ()
+  {
+    let carts = this.getCart();
+    let total: number = 0;
+    carts.forEach( ( item: any ) =>
+    {
+      total += item.quantity
+    } );
+    return total
+  }
 }
