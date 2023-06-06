@@ -7,7 +7,7 @@ export interface User
     email: string;
     password: string;
     confirmPassword: string
-    role: string | number;
+    role?: string | number;
 
 
 }
