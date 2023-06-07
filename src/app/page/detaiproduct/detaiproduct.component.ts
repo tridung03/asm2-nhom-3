@@ -19,14 +19,14 @@ export class DetaiproductComponent {
       const id = Number(params.get("id"));
       this.productService.detailProduct(id).subscribe(data => {
         this.product = data;
+        
       }, error => console.log(error.message)
       )
     }))
 
     this.productService.getProduct().subscribe( data =>
       {
-        console.log( this.product1 = data );
-  
+        console.log( this.product1 = data ); 
       } )
   }
 
