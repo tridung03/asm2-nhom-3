@@ -16,9 +16,9 @@ export class UserService
   {
     return this.http.post<User>( "http://localhost:3000/signup", body );
   }
-  login ( credentials: Login ): Observable<LoginResponse>
+  login ( credentials: any ): Observable<any>
   {
-    return this.http.post<LoginResponse>( `${ this.apiUrl }/signin`, credentials );
+    return this.http.post<any>( `${ this.apiUrl }/signin`, credentials );
 
   }
   getUser ( id: number ): Observable<User>
@@ -34,6 +34,10 @@ export class UserService
   getAll (): Observable<User[]>
   {
     return this.http.get<User[]>( "http://localhost:3000/users" );
+  }
+  isAuthenticated ()
+  {
+    return JSON.parse( localStorage.getItem( "user" )! ) || null
   }
   getUsername (): string
   {
