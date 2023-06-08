@@ -24,7 +24,6 @@ export class SinginComponent
       password: [ '', Validators.required ]
     } );
   }
-
   onSubmit ()
   {
     if ( this.loginForm.invalid )
