@@ -35,7 +35,6 @@ export class SinginComponent
 
     }
 
-
     this.authenticationService.login( users )
       .subscribe(
         response =>
