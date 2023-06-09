@@ -1,1 +1,17 @@
-<p>edit-category works!</p>
+<div class="container">
+    <h1>Thêm sản phẩm</h1>
+    <form>
+        <div class="mb-3">
+            <label for="productName" class="form-label">Tên sản phẩm</label>
+            <input type="text" name="name" [(ngModel)]="product.name" class="form-control" id="productName"
+                placeholder="Nhập tên sản phẩm">
+        </div>
+
+        <div class="mb-3">
+            <label for="productPrice" class="form-label">anh</label>
+            <input type="text" name="img" class="form-control" [(ngModel)]="product.img" id="productPrice">
+        </div>
+        <button type="submit" (click)="onhandleEdit()" class="btn btn-primary">Thêm</button>
+    </form>
+</div>
+h1 vua sua xong

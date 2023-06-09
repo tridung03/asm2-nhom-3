@@ -9,10 +9,11 @@
     },
     {
       "email": "honggiang22112003@gmail.com",
-      "password": "$2a$10$f.kesE2RrDbgCKhItPoHzuXhT4OLiksZ1SpMDuWz/DaxWdPWKnMwS",
+      "password": "$2a$10$v5CXH0gjeD6u78OANAS0TuuwLzR/Ah0GTn2nOsLA/IIDkU5WrUupC",
       "name": "giangnhph23819",
       "confirmPassword": "123456",
-      "id": 4
+      "id": 4,
+      "role": "admin"
     },
     {
       "email": "mateoblue@gmail.com",
@@ -22,13 +23,6 @@
       "id": 5
     },
     {
-      "email": "fdsfdsfs@gmail.com",
-      "password": "$2a$10$ernU5MJZCcRRf7R7RK9sU.JDisXRLQJFsNRwymnGjNxSZQDRlRMO6",
-      "name": "giangnhph23819",
-      "confirmPassword": "123456",
-      "id": 6
-    },
-    {
       "email": "honsgasdf@gmail.com",
       "password": "$2a$10$QtehR.LU9GAtxhQYgTydnen4ttfd8fA.PJElPicmCiYw4MPcTSd2K",
       "name": "store",
@@ -36,17 +30,9 @@
       "id": 7
     },
     {
-      "email": "huhuhuhuh@gmail.com",
-      "password": "$2a$10$dxqnxszEuV6MltcvSY5.OO1ncEW4GdmUcIAY/uJ.KYSX/gX9163zK",
-      "name": "store",
-      "confirmPassword": "123456",
-      "id": 8,
-      "role": "admin"
-    },
-    {
       "email": "honggiaakk@gmail.com",
-      "password": "$2a$10$EF0fqH6sd3sWfBWcGE8qDO8Pj1Crm4L6528fhPTPXRCfBJBdzjWFK",
-      "name": "store",
+      "password": "$2a$10$67CHHpCYycc.xy40DEH.xOtn4P8d9RLOo8yVASv1oHfkOEWrdIAne",
+      "name": "store update",
       "confirmPassword": "123456",
       "id": 9
     },
@@ -66,8 +52,7 @@
       "confirmPassword": "123456",
       "id": 11
     },
-    {
-      "email": "nguyenduc@gmail.com",
+    {      "email": "nguyenduc@gmail.com",
       "password": "$2a$10$slMoJVmV2KIRlLBcfw7YQu3uK1gLNJNW3kWKhZWC5uJceJz8b/U6.",
       "role": "",
       "name": "nguyenducnam",
@@ -81,12 +66,38 @@
       "name": "namnguyenduc",
       "confirmPassword": "123456",
       "id": 15
+
+      "email": "admin1@gmail.com",
+      "password": "$2a$10$5eq3at1I8r63SIPxePP38OoeLhNqfQgulfqd2YJOOnjXynwPUIQ0C",
+      "role": "",
+      "name": "thanh",
+      "confirmPassword": "123456",
+      "id": 12
+    },
+    {
+      "email": "admin2@gmail.com",
+      "password": "$2a$10$z3/4Jy4XasZJuJMc182lFOehjQNs.65DiMzsomBiHo1l3oWeAMS/2",
+      "role": "",
+      "name": "giang",
+      "confirmPassword": "123456",
+      "id": 13
+
     }
   ],
   "category": [
     {
       "id": 1,
-      "name": "dien thoai",
+      "name": "dien thoai 1",
+      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180"
+    },
+    {
+      "id": 2,
+      "name": "tai nghe",
+      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180"
+    },
+    {
+      "id": 3,
+      "name": "may tinh",
       "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180"
     },
     {
@@ -107,7 +118,7 @@
       "name": "iphone13",
       "chitiet": "hang dep qua",
       "price": "300",
-      "categoryId": 1
+      "categoryId": "3"
     },
     {
       "id": 2,
@@ -115,7 +126,7 @@
       "name": "iphone11",
       "chitiet": "hang dep qua ahaha",
       "price": 20000,
-      "categoryId": 2
+      "categoryId": "3"
     },
     {
       "id": 3,
@@ -131,6 +142,29 @@
       "chitiet": "123",
       "categoryId": 0,
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPhsiGx6PHCpVLoeesGBj1MPt2SyiBfbJQO4ojKRL8I7wD1sUdNpQ_t6UBdraCx3sQGu8&usqp=CAU"
+
+      "price": 22222,
+      "name": "san pham d",
+      "chitiet": "dep qua",
+      "categoryId": "1",
+      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180",
+      "id": 11
+    },
+    {
+      "price": 3223332,
+      "name": "san pham g",
+      "chitiet": "adfadasd",
+      "categoryId": "2",
+      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180",
+      "id": 12
+    },
+    {
+      "price": 22222,
+      "name": "san pham e",
+      "chitiet": "eadadaeadada",
+      "categoryId": "3",
+      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180",
+      "id": 13
     }
   ],
   "cart": [
