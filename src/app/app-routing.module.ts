@@ -19,7 +19,11 @@ import { ProductpageComponent } from './page/productpage/productpage.component';
 import { CategoryListComponent } from './page/admin/category-list/category-list.component';
 import { AddcategoryComponent } from './page/admin/addcategory/addcategory.component';
 import { EditCategoryComponent } from './page/admin/edit-category/edit-category.component';
+
 import { EdituserComponent } from './page/admin/edituser/edituser.component';
+
+import { AuthGuard } from './auth.guard';
+
 
 const routes: Routes = [
   {
@@ -50,7 +54,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'admin', component: AdminLayoutComponent, children: [
+    path: 'admin', component: AdminLayoutComponent, canActivate: [ AuthGuard ], children: [
 
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashbroadComponent },

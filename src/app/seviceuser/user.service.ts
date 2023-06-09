@@ -14,8 +14,14 @@ export class UserService {
   singup(body: User): Observable<User> {
     return this.http.post<User>("http://localhost:3000/signup", body);
   }
+
   login(credentials: Login): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${this.apiUrl}/signin`, credentials);
+
+  login ( credentials: any ): Observable<any>
+  {
+    return this.http.post<any>( `${ this.apiUrl }/signin`, credentials );
+
 
   }
   getUser(id: number): Observable<User> {
@@ -29,7 +35,15 @@ export class UserService {
   getAll(): Observable<User[]> {
     return this.http.get<User[]>("http://localhost:3000/users");
   }
+
   getUsername(): string {
+
+  isAuthenticated ()
+  {
+    return JSON.parse( localStorage.getItem( "user" )! ) || null
+  }
+  getUsername (): string
+
     // Trả về tên người dùng đã đăng ký
     // Bạn có thể lấy thông tin từ Local Storage hoặc từ bất kỳ nguồn dữ liệu nào khác
     const name = localStorage.getItem('name');
