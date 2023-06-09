@@ -48,7 +48,7 @@ export class SingupComponent
     this.productService.singup( user ).subscribe( ( result ) =>
     {
       console.log( result );
-
+      this.router.navigateByUrl( "/signin" )
 
     } )
 

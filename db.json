@@ -22,13 +22,6 @@
       "id": 5
     },
     {
-      "email": "fdsfdsfs@gmail.com",
-      "password": "$2a$10$ernU5MJZCcRRf7R7RK9sU.JDisXRLQJFsNRwymnGjNxSZQDRlRMO6",
-      "name": "giangnhph23819",
-      "confirmPassword": "123456",
-      "id": 6
-    },
-    {
       "email": "honsgasdf@gmail.com",
       "password": "$2a$10$QtehR.LU9GAtxhQYgTydnen4ttfd8fA.PJElPicmCiYw4MPcTSd2K",
       "name": "store",
@@ -65,6 +58,22 @@
       "name": "giang",
       "confirmPassword": "123456",
       "id": 11
+    },
+    {
+      "email": "admin1@gmail.com",
+      "password": "$2a$10$5eq3at1I8r63SIPxePP38OoeLhNqfQgulfqd2YJOOnjXynwPUIQ0C",
+      "role": "",
+      "name": "thanh",
+      "confirmPassword": "123456",
+      "id": 12
+    },
+    {
+      "email": "admin2@gmail.com",
+      "password": "$2a$10$z3/4Jy4XasZJuJMc182lFOehjQNs.65DiMzsomBiHo1l3oWeAMS/2",
+      "role": "",
+      "name": "giang",
+      "confirmPassword": "123456",
+      "id": 13
     }
   ],
   "category": [
