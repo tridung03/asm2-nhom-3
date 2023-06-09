@@ -31,7 +31,7 @@ export class AddcategoryComponent
   {
     this.category.AddCategory( this.categorys ).subscribe( () =>
     {
-      this.router.navigateByUrl( "/admin" )
+      this.router.navigateByUrl( "/admin/category" )
     } )
   }
 }

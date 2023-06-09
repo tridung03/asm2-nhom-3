@@ -29,6 +29,7 @@ export class SingupComponent
     const password = form.get( "password" )?.value;
     const confirmPassword = form.get( "confirmPassword" )?.value
     if ( password === confirmPassword ) return null;
+
     return { notMatch: true }
   }
 
@@ -43,7 +44,6 @@ export class SingupComponent
       password: this.singupForm.value.password || "",
       confirmPassword: this.singupForm.value.confirmPassword || ""
     };
-
 
     this.productService.singup( user ).subscribe( ( result ) =>
     {
