@@ -1,1 +1,29 @@
-<p>edituser works!</p>
+<div class="container" id=" second">
+    <div class="myform form ">
+        <div class="logo mb-3">
+            <div class="col-md-12 text-center">
+                <h1>Edit</h1>
+            </div>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1"> Name</label>
+                <input [(ngModel)]="user.name" type="text" name="firstname" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input [(ngModel)]="user.email" type="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1"> vai trò</label>
+                <input [(ngModel)]="user.role" type="email" name="role" class="form-control">
+            </div>
+            <div class="col-md-12 text-center mb-3">
+                <button (click)="onhandleEdit()" type="submit"
+                    class=" btn btn-block mybtn btn-primary tx-tfm">Sửa</button>
+            </div>
+        </form>
+    </div>
+
+</div>

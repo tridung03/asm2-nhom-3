@@ -21,12 +21,24 @@ export class SinginComponent
   {
 
   }
+  onSubmit ()
+
 
   onHandleSubmit ()
   {
     this.submitted = true;
     if ( this.formSignin.valid )
     {
+      return;}
+    const users: Login = {
+      email: this.loginForm.value.email || "",
+      password: this.loginForm.value.password || "",
+
+    }
+
+    this.authenticationService.login( users )
+      .subscribe(
+        response =>
       this.auth.login( this.formSignin.value ).subscribe( data =>
       {
         localStorage.setItem( 'user', JSON.stringify( data ) );

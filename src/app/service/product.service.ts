@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { Observable } from "rxjs"
+import { Iproduct, thanhtoan } from '../common/product';
+import { Login, LoginResponse, User } from '../common/user';
+import { category} from'../common/category'
 import { Iproduct, thanhtoan } from '../interface/product';
 import { Login, LoginResponse, User } from '../interface/user';
 
@@ -46,6 +49,10 @@ export class ProductService
   {
     return this.http.post<thanhtoan>( "http://localhost:3000/cart", body )
   }
+
+  addCategory ( category: category ): Observable<category>
+  {
+    return this.http.post<category>( "http://localhost:3000/category", category )
   getCart ()
   {
     let cartJson = sessionStorage.getItem( "cart" );

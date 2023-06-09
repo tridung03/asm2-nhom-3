@@ -9,10 +9,11 @@
     },
     {
       "email": "honggiang22112003@gmail.com",
-      "password": "$2a$10$f.kesE2RrDbgCKhItPoHzuXhT4OLiksZ1SpMDuWz/DaxWdPWKnMwS",
+      "password": "$2a$10$v5CXH0gjeD6u78OANAS0TuuwLzR/Ah0GTn2nOsLA/IIDkU5WrUupC",
       "name": "giangnhph23819",
       "confirmPassword": "123456",
-      "id": 4
+      "id": 4,
+      "role": "admin"
     },
     {
       "email": "mateoblue@gmail.com",
@@ -29,17 +30,9 @@
       "id": 7
     },
     {
-      "email": "huhuhuhuh@gmail.com",
-      "password": "$2a$10$dxqnxszEuV6MltcvSY5.OO1ncEW4GdmUcIAY/uJ.KYSX/gX9163zK",
-      "name": "store",
-      "confirmPassword": "123456",
-      "id": 8,
-      "role": "admin"
-    },
-    {
       "email": "honggiaakk@gmail.com",
-      "password": "$2a$10$EF0fqH6sd3sWfBWcGE8qDO8Pj1Crm4L6528fhPTPXRCfBJBdzjWFK",
-      "name": "store",
+      "password": "$2a$10$67CHHpCYycc.xy40DEH.xOtn4P8d9RLOo8yVASv1oHfkOEWrdIAne",
+      "name": "store update",
       "confirmPassword": "123456",
       "id": 9
     },
@@ -59,7 +52,21 @@
       "confirmPassword": "123456",
       "id": 11
     },
+    {      "email": "nguyenduc@gmail.com",
+      "password": "$2a$10$slMoJVmV2KIRlLBcfw7YQu3uK1gLNJNW3kWKhZWC5uJceJz8b/U6.",
+      "role": "",
+      "name": "nguyenducnam",
+      "confirmPassword": "123456",
+      "id": 14
+    },
     {
+      "email": "a@gmail.com",
+      "password": "$2a$10$QlbUZycJNLjPTkUAfG5dcelXrPoldp1u81lHQ1PZcCx0ehYdSS90q",
+      "role": "",
+      "name": "namnguyenduc",
+      "confirmPassword": "123456",
+      "id": 15
+
       "email": "admin1@gmail.com",
       "password": "$2a$10$5eq3at1I8r63SIPxePP38OoeLhNqfQgulfqd2YJOOnjXynwPUIQ0C",
       "role": "",
@@ -74,6 +81,7 @@
       "name": "giang",
       "confirmPassword": "123456",
       "id": 13
+
     }
   ],
   "category": [
@@ -91,6 +99,16 @@
       "id": 3,
       "name": "may tinh",
       "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180"
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Đức Nam",
+      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180"
+    },
+    {
+      "id": 3,
+      "name": "Bàn phím",
+      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180"
     }
   ],
   "products": [
@@ -104,13 +122,27 @@
     },
     {
       "id": 2,
-      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180",
-      "name": "iphone14",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG460KElRWdtuEvBPfu2UEDEOm08q3Yrpt6c7aQzVpEpVpXpl7C8jhQRbzBnRAsIkrF6I&usqp=CAU",
+      "name": "iphone11",
       "chitiet": "hang dep qua ahaha",
       "price": 20000,
       "categoryId": "3"
     },
     {
+      "id": 3,
+      "price": 444455555,
+      "name": "gianghong",
+      "chitiet": "fggfdf",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUQNmETvzxgDWCqAFOPdkbIQjWip3o43Oyx68OAOBrl9-hdNsiFJy-eqsfO3-OsffE8PQ&usqp=CAU"
+    },
+    {
+      "id": 6,
+      "price": 10000,
+      "name": "dan pham d",
+      "chitiet": "123",
+      "categoryId": 0,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPhsiGx6PHCpVLoeesGBj1MPt2SyiBfbJQO4ojKRL8I7wD1sUdNpQ_t6UBdraCx3sQGu8&usqp=CAU"
+
       "price": 22222,
       "name": "san pham d",
       "chitiet": "dep qua",
@@ -175,6 +207,54 @@
       "diachi": "ha noi",
       "soluong": 2,
       "id": 5
+    },
+    {
+      "name": "Nguyễn Đức Nam",
+      "sdt": 328397661,
+      "email": "nguyenducnam135@gmail.com",
+      "diachi": "123",
+      "soluong": 2,
+      "id": 6
+    },
+    {
+      "name": "Nguyễn Đức Nam",
+      "sdt": 328397661,
+      "email": "nguyenducnam135@gmail.com",
+      "diachi": "123",
+      "soluong": 2,
+      "id": 7
+    },
+    {
+      "name": "Nguyễn Đức Nam",
+      "sdt": 328397661,
+      "email": "nguyenducnam135@gmail.com",
+      "diachi": "123",
+      "soluong": 2,
+      "id": 8
+    },
+    {
+      "name": "Nguyễn Đức Nam",
+      "sdt": 328397661,
+      "email": "nguyenducnam135@gmail.com",
+      "diachi": "123",
+      "soluong": 2,
+      "id": 9
+    },
+    {
+      "name": "Nguyễn Đức Nam",
+      "sdt": 328397661,
+      "email": "nguyenducnam135@gmail.com",
+      "diachi": "123",
+      "soluong": 2,
+      "id": 10
+    },
+    {
+      "name": "Nguyễn Đức Nam",
+      "sdt": 328397661,
+      "email": "nguyenducnam135@gmail.com",
+      "diachi": "123",
+      "soluong": 2,
+      "id": 11
     }
   ]
 }
