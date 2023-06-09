@@ -47,6 +47,7 @@ export class BaseLayoutComponent implements OnInit
     }
   }
 
+
   logout ()
   {
     this.userService.logout();
