@@ -9,10 +9,11 @@
     },
     {
       "email": "honggiang22112003@gmail.com",
-      "password": "$2a$10$f.kesE2RrDbgCKhItPoHzuXhT4OLiksZ1SpMDuWz/DaxWdPWKnMwS",
+      "password": "$2a$10$v5CXH0gjeD6u78OANAS0TuuwLzR/Ah0GTn2nOsLA/IIDkU5WrUupC",
       "name": "giangnhph23819",
       "confirmPassword": "123456",
-      "id": 4
+      "id": 4,
+      "role": "admin"
     },
     {
       "email": "mateoblue@gmail.com",
@@ -29,17 +30,9 @@
       "id": 7
     },
     {
-      "email": "huhuhuhuh@gmail.com",
-      "password": "$2a$10$dxqnxszEuV6MltcvSY5.OO1ncEW4GdmUcIAY/uJ.KYSX/gX9163zK",
-      "name": "store",
-      "confirmPassword": "123456",
-      "id": 8,
-      "role": "admin"
-    },
-    {
       "email": "honggiaakk@gmail.com",
-      "password": "$2a$10$EF0fqH6sd3sWfBWcGE8qDO8Pj1Crm4L6528fhPTPXRCfBJBdzjWFK",
-      "name": "store",
+      "password": "$2a$10$67CHHpCYycc.xy40DEH.xOtn4P8d9RLOo8yVASv1oHfkOEWrdIAne",
+      "name": "store update",
       "confirmPassword": "123456",
       "id": 9
     },

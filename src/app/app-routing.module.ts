@@ -19,7 +19,11 @@ import { ProductpageComponent } from './page/productpage/productpage.component';
 import { CategoryListComponent } from './page/admin/category-list/category-list.component';
 import { AddcategoryComponent } from './page/admin/addcategory/addcategory.component';
 import { EditCategoryComponent } from './page/admin/edit-category/edit-category.component';
+
+import { EdituserComponent } from './page/admin/edituser/edituser.component';
+
 import { AuthGuard } from './auth.guard';
+
 
 const routes: Routes = [
   {
@@ -59,7 +63,7 @@ const routes: Routes = [
       { path: 'category/addcategory', component: AddcategoryComponent },
 
       { path: 'category/editcategory/:id', component: EditCategoryComponent },
-
+      { path: 'listuser/edit/:id', component: EdituserComponent },
 
 
       { path: 'product', component: AdminProductComponent },
@@ -71,8 +75,8 @@ const routes: Routes = [
   { path: '**', component: NotFountComponent }
 ];
 
-@NgModule( {
-  imports: [ RouterModule.forRoot( routes ) ],
-  exports: [ RouterModule ]
-} )
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
 export class AppRoutingModule { }

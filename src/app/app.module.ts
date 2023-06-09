@@ -13,8 +13,8 @@ import { AdminProductComponent } from './page/admin/admin-product/admin-product.
 import { HttpClientModule } from '@angular/common/http';
 import { DetaiproductComponent } from './page/detaiproduct/detaiproduct.component';
 import { AddproductComponent } from './page/admin/addproduct/addproduct.component';
-import { EditproductComponent } from './page/admin/editproduct/editproduct.component'
-import { ReactiveFormsModule } from '@angular/forms';
+import { EditproductComponent } from './page/admin/editproduct/editproduct.component';
+import { ReactiveFormsModule } from "@angular/forms";
 import { FormsModule } from '@angular/forms';
 import { SingupComponent } from './page/singup/singup.component';
 import { SinginComponent } from './page/singin/singin.component';
@@ -28,7 +28,7 @@ import { CategoryListComponent } from './page/admin/category-list/category-list.
 import { EditCategoryComponent } from './page/admin/edit-category/edit-category.component';
 import { AddcategoryComponent } from './page/admin/addcategory/addcategory.component';
 
-@NgModule( {
+@NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
@@ -59,10 +59,11 @@ import { AddcategoryComponent } from './page/admin/addcategory/addcategory.compo
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
-  bootstrap: [ AppComponent ]
-} )
+  bootstrap: [AppComponent]
+})
 export class AppModule { }
