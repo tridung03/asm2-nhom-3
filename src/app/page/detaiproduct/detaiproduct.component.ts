@@ -34,14 +34,14 @@ export class DetaiproductComponent
       this.productService.detailProduct( id ).subscribe( data =>
       {
         this.product = data;
+        
       }, error => console.log(error.message)
       )
     }))
 
     this.productService.getProduct().subscribe( data =>
       {
-        console.log( this.product1 = data );
-  
+        console.log( this.product1 = data ); 
       } )
   }
   ngOnInit (): void
