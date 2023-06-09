@@ -20,6 +20,10 @@ export class ProductService
   {
     return this.http.get<Iproduct[]>( "http://localhost:3000/products" )
   }
+  searchProducts ( keyword: string ): Observable<any[]>
+  {
+    return this.http.get<any[]>( `${ this.apiUrl }/products?search=${ keyword }` );
+  }
   detailProduct ( id: number ): Observable<Iproduct>
   {
     return this.http.get<Iproduct>( `http://localhost:3000/products/${ id }` )

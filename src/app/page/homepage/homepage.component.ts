@@ -11,17 +11,38 @@ import { ProductService } from 'src/app/service/product.service';
 } )
 export class HomepageComponent
 {
-  product!: Iproduct[]
-  category!: category[]
-  constructor ( private productService: ProductService, private categorys: CategoryService )
+  product: Iproduct[] = [];
+  searchName: string = '';
+  category!: category[];
+
+  constructor ( private productService: ProductService, private categoryService: CategoryService )
   {
     this.productService.getProduct().subscribe( data =>
     {
-      console.log( this.product = data );
+      this.product = data;
+    } );
 
-    } ),
-      this.categorys.getAllCategory().subscribe( data =>
-        console.log( this.category = data )
-      )
+    this.categoryService.getAllCategory().subscribe( data =>
+    {
+      this.category = data;
+    } );
+  }
+
+  search ()
+  {
+    if ( this.searchName.trim() !== '' )
+    {
+      const keyword = this.searchName.toLowerCase();
+      this.productService.getProduct().subscribe( data =>
+      {
+        this.product = data.filter( item => item.name.toLowerCase().includes( keyword ) );
+      } );
+    } else
+    {
+      this.productService.getProduct().subscribe( data =>
+      {
+        this.product = data;
+      } );
+    }
   }
 }
