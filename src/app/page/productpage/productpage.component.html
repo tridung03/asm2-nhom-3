@@ -9,7 +9,7 @@
 </section>
 <!-- PRODUCTS LIST -->
 <section class="text-center mt-4 bg-light-subtle">
-    <h1>Điện thoại bán chạy</h1>
+    <h1>Điện thoại bán chạy nhất </h1>
     <div class="row">
         <div class="col-3 shadow-sm p-3" *ngFor="let product of filteredProducts">
             <a routerLink="/product/{{product.id}}">
@@ -24,7 +24,7 @@
                 <span class="text-danger">{{product.price}} đ</span>
                 <del class="text-body-tertiary">$12 đ</del>
             </div>
-            <a routerLink="/product/{{product.id}}" class="btn btn-danger px-5">View</a>
+            <a routerLink="/product/{{product.id}}" class="btn btn-danger px-5">Viiiew</a>
         </div>
     </div>
 </section>
