@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Login } from 'src/app/interface/user';
+import { Login, User } from 'src/app/interface/user';
 import { UserService } from 'src/app/seviceuser/user.service';
 
 @Component( {
@@ -21,25 +21,17 @@ export class SinginComponent
   {
 
   }
-  onSubmit ()
-
 
   onHandleSubmit ()
   {
     this.submitted = true;
+    const user: Login = {
+      email: this.formSignin.value.email || "",
+      password: this.formSignin.value.password || ""
+    }
     if ( this.formSignin.valid )
     {
-      return;}
-    const users: Login = {
-      email: this.loginForm.value.email || "",
-      password: this.loginForm.value.password || "",
-
-    }
-
-    this.authenticationService.login( users )
-      .subscribe(
-        response =>
-      this.auth.login( this.formSignin.value ).subscribe( data =>
+      this.auth.login( user ).subscribe( data =>
       {
         localStorage.setItem( 'user', JSON.stringify( data ) );
 

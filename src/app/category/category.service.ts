@@ -2,12 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { category } from '../interface/category';
+import { Iproduct } from '../interface/product';
 
 @Injectable( {
   providedIn: 'root'
 } )
 export class CategoryService
 {
+  private apiUrl = 'http://localhost:3000';
+
 
 
 

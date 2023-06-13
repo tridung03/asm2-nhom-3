@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { Observable } from "rxjs"
-import { Iproduct, thanhtoan } from '../common/product';
-import { Login, LoginResponse, User } from '../common/user';
-import { category} from'../common/category'
 import { Iproduct, thanhtoan } from '../interface/product';
 import { Login, LoginResponse, User } from '../interface/user';
 
@@ -16,6 +13,11 @@ export class ProductService
 
   constructor ( private http: HttpClient )
   { }
+  getRelatedProductsByCategory ( categoryId: string ): Observable<Iproduct[]>
+  {
+    // Gửi yêu cầu GET đến API để lấy các sản phẩm cùng danh mục
+    return this.http.get<Iproduct[]>( `${ this.apiUrl }/products?category=${ categoryId }` );
+  }
   getProduct (): Observable<Iproduct[]>
   {
     return this.http.get<Iproduct[]>( "http://localhost:3000/products" )
@@ -49,10 +51,6 @@ export class ProductService
   {
     return this.http.post<thanhtoan>( "http://localhost:3000/cart", body )
   }
-
-  addCategory ( category: category ): Observable<category>
-  {
-    return this.http.post<category>( "http://localhost:3000/category", category )
   getCart ()
   {
     let cartJson = sessionStorage.getItem( "cart" );
