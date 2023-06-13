@@ -14,14 +14,8 @@ export class UserService {
   singup(body: User): Observable<User> {
     return this.http.post<User>("http://localhost:3000/signup", body);
   }
-
   login(credentials: Login): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${this.apiUrl}/signin`, credentials);
-
-  login ( credentials: any ): Observable<any>
-  {
-    return this.http.post<any>( `${ this.apiUrl }/signin`, credentials );
-
 
   }
   getUser(id: number): Observable<User> {
@@ -35,15 +29,11 @@ export class UserService {
   getAll(): Observable<User[]> {
     return this.http.get<User[]>("http://localhost:3000/users");
   }
-
-  getUsername(): string {
-
-  isAuthenticated ()
-  {
-    return JSON.parse( localStorage.getItem( "user" )! ) || null
+  editUser(body: User): Observable<User> {
+    const url = `${this.apiUrl}/users/${body.id}`;
+    return this.http.put<User>(url, body);
   }
-  getUsername (): string
-
+  getUsername(): string {
     // Trả về tên người dùng đã đăng ký
     // Bạn có thể lấy thông tin từ Local Storage hoặc từ bất kỳ nguồn dữ liệu nào khác
     const name = localStorage.getItem('name');
@@ -66,8 +56,7 @@ export class UserService {
     const accessToken = localStorage.getItem('accessToken');
     return !!accessToken; // Trả về true nếu có token xác thực, ngược lại trả về false
   }
-  editUser(user: User): Observable<User> {
-    return this.http.put<User>(`http://localhost:3000/users/${user.id}`, user)
+  isAuthenticated() {
+    return JSON.parse(localStorage.getItem("user")!) || null
   }
-
 }
