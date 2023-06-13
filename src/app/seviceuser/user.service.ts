@@ -14,8 +14,8 @@ export class UserService {
   singup(body: User): Observable<User> {
     return this.http.post<User>("http://localhost:3000/signup", body);
   }
-  login(credentials: Login): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${this.apiUrl}/signin`, credentials);
+  login(credentials: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/signin`, credentials);
 
   }
   getUser(id: number): Observable<User> {
@@ -32,6 +32,9 @@ export class UserService {
   editUser(body: User): Observable<User> {
     const url = `${this.apiUrl}/users/${body.id}`;
     return this.http.put<User>(url, body);
+  }
+  isAuthenticated() {
+    return JSON.parse(localStorage.getItem("user")!) || null
   }
   getUsername(): string {
     // Trả về tên người dùng đã đăng ký
@@ -55,8 +58,5 @@ export class UserService {
     // Ví dụ: kiểm tra sự tồn tại của token xác thực trong Local Storage
     const accessToken = localStorage.getItem('accessToken');
     return !!accessToken; // Trả về true nếu có token xác thực, ngược lại trả về false
-  }
-  isAuthenticated() {
-    return JSON.parse(localStorage.getItem("user")!) || null
   }
 }

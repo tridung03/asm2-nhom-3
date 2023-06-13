@@ -14,10 +14,10 @@ export class EditproductComponent implements OnInit
 {
   product: Iproduct = {
     id: 0,
-    price: 0,
     name: "",
+    price: 0,
     chitiet: "",
-    img: "",
+    img: ""
   }
   categories: category[] = [];
 
@@ -28,9 +28,8 @@ export class EditproductComponent implements OnInit
   }
   ngOnInit (): void
   {
-    this.getAllCategory();
-    this.getOneProduct()
-
+    this.getAllCategory,
+      this.getOneProduct
   }
   getOneProduct ()
   {

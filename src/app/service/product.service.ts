@@ -13,9 +13,18 @@ export class ProductService
 
   constructor ( private http: HttpClient )
   { }
+  getRelatedProductsByCategory ( categoryId: string ): Observable<Iproduct[]>
+  {
+    // Gửi yêu cầu GET đến API để lấy các sản phẩm cùng danh mục
+    return this.http.get<Iproduct[]>( `${ this.apiUrl }/products?category=${ categoryId }` );
+  }
   getProduct (): Observable<Iproduct[]>
   {
     return this.http.get<Iproduct[]>( "http://localhost:3000/products" )
+  }
+  searchProducts ( keyword: string ): Observable<any[]>
+  {
+    return this.http.get<any[]>( `${ this.apiUrl }/products?search=${ keyword }` );
   }
   detailProduct ( id: number ): Observable<Iproduct>
   {

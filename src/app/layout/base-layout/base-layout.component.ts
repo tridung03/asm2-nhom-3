@@ -29,13 +29,13 @@ export class BaseLayoutComponent implements OnInit
     {
       this.route.params.subscribe( params =>
       {
-        this.userId = parseInt( params[ 'id' ] ); // Chuyển đổi kiểu dữ liệu của userId từ string sang number
+        this.userId = Number( params[ 'id' ] ); // Chuyển đổi kiểu dữ liệu của userId từ string sang number
         this.userService.getUser( this.userId ).subscribe(
           ( user: User ) =>
           {
             if ( user )
             {
-              this.name = user.name; // Gán giá trị `name` từ thông tin người dùng
+              this.name = this.name; // Gán giá trị `name` từ thông tin người dùng
             }
           },
           ( error: any ) =>
