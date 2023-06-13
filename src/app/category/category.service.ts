@@ -36,9 +36,12 @@ export class CategoryService
   {
     return this.http.put<category>( `http://localhost:3000/category/${ product.id }`, product )
   }
-  ListProductByCate (): Observable<any>
-  {
-    return this.http.get( "http://localhost:3000/category/" )
+  // ListProductByCate (): Observable<any>
+  // {
+  //   return this.http.get( "http://localhost:3000/category/" )
+  // }
+  ListProductByCate () : Observable<any>{
+    return this.http.get("http://localhost:300/categoty/")
   }
 
 }
