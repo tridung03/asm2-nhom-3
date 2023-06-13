@@ -1,114 +1,45 @@
 {
   "users": [
     {
-      "email": "giangnhph23819@fpt.edu.vn",
-      "password": "$2a$10$WMgoJDqYRIDtNuYMlfI8DOsh0HG/WQD83L/jGI.r2Ms7HNxAzYAXi",
-      "name": "giangnhph23819",
-      "confirmPassword": "1234567",
-      "id": 3
-    },
-    {
-      "email": "honggiang22112003@gmail.com",
-      "password": "$2a$10$v5CXH0gjeD6u78OANAS0TuuwLzR/Ah0GTn2nOsLA/IIDkU5WrUupC",
-      "name": "giangnhph23819",
-      "confirmPassword": "123456",
-      "id": 4,
-      "role": "admin"
-    },
-    {
-      "email": "mateoblue@gmail.com",
-      "password": "$2a$10$HFLsqoYQMWENDbx87mSiBeGYRm/mR7B5OmeuqJkynj/biORqjUhGO",
+      "email": "admin2@gmail.com",
+      "password": "$2a$10$z3/4Jy4XasZJuJMc182lFOehjQNs.65DiMzsomBiHo1l3oWeAMS/2",
+      "role": "admin",
       "name": "giang",
       "confirmPassword": "123456",
-      "id": 5
-    },
-    {
-      "email": "honsgasdf@gmail.com",
-      "password": "$2a$10$QtehR.LU9GAtxhQYgTydnen4ttfd8fA.PJElPicmCiYw4MPcTSd2K",
-      "name": "store",
-      "confirmPassword": "123456",
-      "id": 7
-    },
-    {
-      "email": "honggiaakk@gmail.com",
-      "password": "$2a$10$67CHHpCYycc.xy40DEH.xOtn4P8d9RLOo8yVASv1oHfkOEWrdIAne",
-      "name": "store update",
-      "confirmPassword": "123456",
-      "id": 9
+      "id": 13
     },
     {
       "email": "admin@gmail.com",
-      "password": "$2a$10$uQy0Tu9Yu8ov6J0zUFW0PuYS4lVBVYQy31cwRS7LXKyAz2QCYHqv.",
-      "role": "",
+      "password": "$2a$10$jg49r4HG5VGW5pMwTpqNYeOAZkqpzE3vY9tvlrLBbJy6FwJYCg.M.",
+      "role": "admin",
       "name": "giang",
-      "confirmPassword": "123456",
-      "id": 10
-    },
-    {
-      "email": "nhom3@gmail.com",
-      "password": "$2a$10$0tZfEFN/hLZ3fK9anUUhZ.I4ImhDEmffbKJLW/mOyL/GZuIVyCY7C",
-      "role": "",
-      "name": "giang",
-      "confirmPassword": "123456",
-      "id": 11
-    },
-    {      "email": "nguyenduc@gmail.com",
-      "password": "$2a$10$slMoJVmV2KIRlLBcfw7YQu3uK1gLNJNW3kWKhZWC5uJceJz8b/U6.",
-      "role": "",
-      "name": "nguyenducnam",
       "confirmPassword": "123456",
       "id": 14
     },
     {
-      "email": "a@gmail.com",
-      "password": "$2a$10$QlbUZycJNLjPTkUAfG5dcelXrPoldp1u81lHQ1PZcCx0ehYdSS90q",
-      "role": "",
-      "name": "namnguyenduc",
-      "confirmPassword": "123456",
-      "id": 15
-
       "email": "admin1@gmail.com",
-      "password": "$2a$10$5eq3at1I8r63SIPxePP38OoeLhNqfQgulfqd2YJOOnjXynwPUIQ0C",
-      "role": "",
-      "name": "thanh",
-      "confirmPassword": "123456",
-      "id": 12
-    },
-    {
-      "email": "admin2@gmail.com",
-      "password": "$2a$10$z3/4Jy4XasZJuJMc182lFOehjQNs.65DiMzsomBiHo1l3oWeAMS/2",
+      "password": "$2a$10$0.A3ZZnQiT8e5ZIZAa9m5eNqKswKuDqZCMvhUP/ryeVlGhvcYPHBG",
       "role": "",
       "name": "giang",
       "confirmPassword": "123456",
-      "id": 13
-
+      "id": 15
     }
   ],
   "category": [
     {
       "id": 1,
-      "name": "dien thoai 1",
+      "name": "Điện thoại",
       "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180"
     },
     {
       "id": 2,
-      "name": "tai nghe",
-      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180"
+      "name": "phụ kiện điện thoại",
+      "img": "https://tse1.mm.bing.net/th?id=OIP.YlmJ4VqC8_pl6uYZyOUKhgHaD7&pid=Api&P=0&h=180"
     },
     {
       "id": 3,
       "name": "may tinh",
-      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180"
-    },
-    {
-      "id": 2,
-      "name": "Nguyễn Đức Nam",
-      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180"
-    },
-    {
-      "id": 3,
-      "name": "Bàn phím",
-      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180"
+      "img": "https://tse4.mm.bing.net/th?id=OIP.QFPr6deLqIpt_qpjefjbMwHaEz&pid=Api&P=0&h=180"
     }
   ],
   "products": [
@@ -116,55 +47,65 @@
       "id": 1,
       "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180",
       "name": "iphone13",
-      "chitiet": "hang dep qua",
-      "price": "300",
-      "categoryId": "3"
+      "chitiet": "sản phẩm chất lượng bán chạy nhất năm 2023",
+      "price": 260000,
+      "categoryId": "1"
     },
     {
       "id": 2,
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG460KElRWdtuEvBPfu2UEDEOm08q3Yrpt6c7aQzVpEpVpXpl7C8jhQRbzBnRAsIkrF6I&usqp=CAU",
-      "name": "iphone11",
-      "chitiet": "hang dep qua ahaha",
+      "img": "https://tse4.mm.bing.net/th?id=OIP.G-9VRxHhOl44omIC0WPi1AHaIw&pid=Api&P=0&h=180",
+      "name": "iphone14",
+      "chitiet": "bán chạy nhất năm 2023",
       "price": 20000,
-      "categoryId": "3"
+      "categoryId": "1"
     },
     {
-      "id": 3,
-      "price": 444455555,
-      "name": "gianghong",
-      "chitiet": "fggfdf",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUQNmETvzxgDWCqAFOPdkbIQjWip3o43Oyx68OAOBrl9-hdNsiFJy-eqsfO3-OsffE8PQ&usqp=CAU"
-    },
-    {
-      "id": 6,
-      "price": 10000,
-      "name": "dan pham d",
-      "chitiet": "123",
-      "categoryId": 0,
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPhsiGx6PHCpVLoeesGBj1MPt2SyiBfbJQO4ojKRL8I7wD1sUdNpQ_t6UBdraCx3sQGu8&usqp=CAU"
-
-      "price": 22222,
-      "name": "san pham d",
-      "chitiet": "dep qua",
+      "price": 160000,
+      "name": "iphone 12",
+      "chitiet": "sản phẩm bán chạy nhất năm 2022",
       "categoryId": "1",
-      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180",
+      "img": "https://tse3.mm.bing.net/th?id=OIP.1RLV04zmaveZuUHEjRlevQHaJ4&pid=Api&P=0&h=180",
       "id": 11
     },
     {
-      "price": 3223332,
-      "name": "san pham g",
-      "chitiet": "adfadasd",
+      "price": 2000,
+      "name": "tai nghe",
+      "chitiet": "phụ kiện được yêu thích nhất ",
       "categoryId": "2",
-      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180",
+      "img": "https://tse4.mm.bing.net/th?id=OIP.BNpfIUNLF_DMn4qbpRPt_wHaHI&pid=Api&P=0&h=180",
       "id": 12
     },
     {
-      "price": 22222,
-      "name": "san pham e",
-      "chitiet": "eadadaeadada",
-      "categoryId": "3",
-      "img": "https://tse4.mm.bing.net/th?id=OIP.O9tp7tHdxxMLdSpLNDkQcQHaHa&pid=Api&P=0&h=180",
+      "price": 3000,
+      "name": "chuột gaming",
+      "chitiet": "sản phẩm được yêu thích nhất ",
+      "categoryId": "2",
+      "img": "https://tse1.mm.bing.net/th?id=OIP.JA9RPVZXJzm4CncM7HK05AHaHa&pid=Api&P=0&h=180",
       "id": 13
+    },
+    {
+      "price": 200000,
+      "name": "ốp lưng điện thoại ",
+      "chitiet": "hàng đẹp được bán chạy",
+      "categoryId": "2",
+      "img": "https://tse1.mm.bing.net/th?id=OIP.0Xcqa7AfrE_iVhUu-Fm4ugHaHa&pid=Api&P=0&h=180",
+      "id": 14
+    },
+    {
+      "price": 2500000,
+      "name": "dell G3",
+      "chitiet": "máy tính gaming bán chạy nhất 2022",
+      "categoryId": "3",
+      "img": "https://tse2.mm.bing.net/th?id=OIP.4Mb5l-ObX0qa3d9QPHRiHAHaHa&pid=Api&P=0&h=180",
+      "id": 15
+    },
+    {
+      "price": 200000,
+      "name": "ASUS TUF Gaming 15",
+      "chitiet": "hàng được lựa chọn nhiều nhất ",
+      "categoryId": "3",
+      "img": "https://tse3.mm.bing.net/th?id=OIP.ZroO5Kp32z3oUzWgrtyWCAHaHa&pid=Api&P=0&h=180",
+      "id": 16
     }
   ],
   "cart": [
@@ -207,54 +148,6 @@
       "diachi": "ha noi",
       "soluong": 2,
       "id": 5
-    },
-    {
-      "name": "Nguyễn Đức Nam",
-      "sdt": 328397661,
-      "email": "nguyenducnam135@gmail.com",
-      "diachi": "123",
-      "soluong": 2,
-      "id": 6
-    },
-    {
-      "name": "Nguyễn Đức Nam",
-      "sdt": 328397661,
-      "email": "nguyenducnam135@gmail.com",
-      "diachi": "123",
-      "soluong": 2,
-      "id": 7
-    },
-    {
-      "name": "Nguyễn Đức Nam",
-      "sdt": 328397661,
-      "email": "nguyenducnam135@gmail.com",
-      "diachi": "123",
-      "soluong": 2,
-      "id": 8
-    },
-    {
-      "name": "Nguyễn Đức Nam",
-      "sdt": 328397661,
-      "email": "nguyenducnam135@gmail.com",
-      "diachi": "123",
-      "soluong": 2,
-      "id": 9
-    },
-    {
-      "name": "Nguyễn Đức Nam",
-      "sdt": 328397661,
-      "email": "nguyenducnam135@gmail.com",
-      "diachi": "123",
-      "soluong": 2,
-      "id": 10
-    },
-    {
-      "name": "Nguyễn Đức Nam",
-      "sdt": 328397661,
-      "email": "nguyenducnam135@gmail.com",
-      "diachi": "123",
-      "soluong": 2,
-      "id": 11
     }
   ]
 }
