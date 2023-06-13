@@ -19,7 +19,7 @@ export class BaseLayoutComponent implements OnInit
 
   ngOnInit ()
   {
-    this.checkLoggedIn();
+    this.checkLoggedIn()
   }
 
   checkLoggedIn ()
