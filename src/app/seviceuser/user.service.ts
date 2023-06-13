@@ -16,17 +16,11 @@ export class UserService
   {
     return this.http.post<User>( "http://localhost:3000/signup", body );
   }
-
-  login ( credentials: Login ): Observable<LoginResponse>
+  login ( credentials: any ): Observable<any>
   {
-    return this.http.post<LoginResponse>( `${ this.apiUrl }/signin`, credentials );
+    return this.http.post<any>( `${ this.apiUrl }/signin`, credentials );
 
   }
-
-  login(credentials: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/signin`, credentials);
-
-
   getUser ( id: number ): Observable<User>
   {
     const url = `${ this.apiUrl }/users/${ id }`;
@@ -46,23 +40,12 @@ export class UserService
     const url = `${ this.apiUrl }/users/${ body.id }`;
     return this.http.put<User>( url, body );
   }
-
   isAuthenticated ()
   {
     return JSON.parse( localStorage.getItem( "user" )! ) || null
   }
   getUsername (): string
   {
-
-  editUser(body: User): Observable<User> {
-    const url = `${this.apiUrl}/users/${body.id}`;
-    return this.http.put<User>(url, body);
-  }
-  isAuthenticated() {
-    return JSON.parse(localStorage.getItem("user")!) || null
-  }
-  getUsername(): string {
-
     // Trả về tên người dùng đã đăng ký
     // Bạn có thể lấy thông tin từ Local Storage hoặc từ bất kỳ nguồn dữ liệu nào khác
     const name = localStorage.getItem( 'name' );
@@ -83,12 +66,7 @@ export class UserService
   {
     // Kiểm tra xem người dùng đã đăng nhập hay chưa
     // Ví dụ: kiểm tra sự tồn tại của token xác thực trong Local Storage
-
-    const user = localStorage.getItem( 'user' );
-    return !!user; // Trả về true nếu có token xác thực, ngược lại trả về false
-
-    const accessToken = localStorage.getItem('accessToken');
+    const accessToken = localStorage.getItem( 'user' );
     return !!accessToken; // Trả về true nếu có token xác thực, ngược lại trả về false
-
   }
 }
