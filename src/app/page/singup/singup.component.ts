@@ -26,6 +26,11 @@ export class SingupComponent {
     const password = form.get("password")?.value;
     const confirmPassword = form.get("confirmPassword")?.value
     if (password === confirmPassword) return null;
+  checkpassword ( form: FormGroup )
+  {
+    const password = form.get( "password" )?.value;
+    const confirmPassword = form.get( "confirmPassword" )?.value
+    if ( password === confirmPassword ) return null;
 
     return { notMatch: true }
   }
@@ -46,6 +51,12 @@ export class SingupComponent {
       this.router.navigateByUrl("/signin")
 
     })
+    this.productService.singup( user ).subscribe( ( result ) =>
+    {
+      console.log( result );
+      this.router.navigateByUrl( "/signin" )
+
+    } )
 
   }
   get name() {

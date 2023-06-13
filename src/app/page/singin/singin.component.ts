@@ -29,6 +29,11 @@ export class SinginComponent {
     if (this.formSignin.valid) {
       this.auth.login(user).subscribe(data => {
         localStorage.setItem('user', JSON.stringify(data));
+    if ( this.formSignin.valid )
+    {
+      this.auth.login( user ).subscribe( data =>
+      {
+        localStorage.setItem( 'user', JSON.stringify( data ) );
 
         // Kiểm tra role sau khi đăng nhập
         if (data.user.role === 'admin') {

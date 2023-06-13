@@ -21,11 +21,34 @@
                   <label class="form-label" for="form3Example3cg">Your Email</label>
                   <span *ngIf="email && email.invalid && email.touched">truong email la bat buoc</span>
 
+
+<section class="vh-100 bg-image">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form action="#" [formGroup]="singupForm" (ngSubmit)="singupUser()" name="registration">
+                <div class="form-outline mb-4">
+                  <input type="text" name="firstname"  id="form3Example1cg" class="form-control form-control-lg" formControlName="name"/>
+                  <label class="form-label" for="form3Example1cg">Your Name</label>
+                <span *ngIf="name && name.invalid && name.touched">truong fistname la bat buoc</span>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" name="email" id="form3Example3cg" class="form-control form-control-lg"formControlName="email" />
+                  <label class="form-label" for="form3Example3cg">Your Email</label>
+                <span *ngIf="email && email.invalid && email.touched">truong email la bat buoc</span>
+
                 </div>
 
                 <div class="form-outline mb-4">
                   <input type="password" name="password" id="form3Example4cg" class="form-control form-control-lg"
                     formControlName="password" />
+                  <input type="password"  name="password" id="form3Example4cg" class="form-control form-control-lg" formControlName="password"/>
                   <label class="form-label" for="form3Example4cg">Password</label>
                   <span *ngIf="password&& password.invalid && password.touched">truong password la bat
                     buoc</span>
@@ -34,6 +57,8 @@
                 <div class="form-outline mb-4">
                   <input type="password" name="password" id="form3Example4cdg" class="form-control form-control-lg"
                     formControlName="confirmPassword" />
+
+                  <input type="password" name="password" id="form3Example4cdg" class="form-control form-control-lg" formControlName="confirmPassword" />
                   <label class="form-label" for="form3Example4cdg">Confirm password</label>
                   <span *ngIf="confirmPassword&& confirmPassword.invalid && confirmPassword.touched">truong
                     comfirmPassword la bat
@@ -46,6 +71,7 @@
                     Mật khẩu không khớp
                   </div>
                 </div>
+                </div>
 
                 <div class="form-check d-flex justify-content-center mb-5">
                   <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
@@ -56,6 +82,8 @@
 
                 <div class="d-flex justify-content-center">
                   <button type="submit" [disabled]="!singupForm.valid"
+
+                  <button type="submit"  [disabled]="!singupForm.valid"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Sign up</button>
                 </div>
 
