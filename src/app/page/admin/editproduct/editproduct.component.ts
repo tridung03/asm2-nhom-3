@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Iproduct } from 'src/app/common/product';
+import { CategoryService } from 'src/app/category/category.service';
+import { category } from 'src/app/interface/category';
+import { Iproduct } from 'src/app/interface/product';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component( {
@@ -12,23 +14,38 @@ export class EditproductComponent implements OnInit
 {
   product: Iproduct = {
     id: 0,
-    price: 0,
     name: "",
+    price: 0,
     chitiet: "",
-    img: "",
+    img: ""
   }
+  categories: category[] = [];
 
-  constructor ( private router: ActivatedRoute, private route: Router, private productSevice: ProductService
+  constructor ( private router: ActivatedRoute, private route: Router, private productSevice: ProductService, private categorys: CategoryService
   )
   {
 
   }
   ngOnInit (): void
   {
-    const productId = this.router.snapshot.params[ 'id' ];//lay id san pham
-    this.productSevice.detailProduct( productId ).subscribe( ( product ) =>
+    this.getAllCategory,
+      this.getOneProduct
+  }
+  getOneProduct ()
+  {
+    this.router.params.subscribe( ( params ) =>
     {
-      this.product = product
+      const productId = params[ 'id' ]
+      if ( productId )
+      {
+        this.productSevice.detailProduct( productId ).subscribe( ( data ) =>
+        {
+          this.product = data
+        } )
+      } else
+      {
+        console.log( "invailed product id" );
+      }
     } )
   }
 
@@ -37,6 +54,13 @@ export class EditproductComponent implements OnInit
     this.productSevice.editProduct( this.product ).subscribe( () =>
     {
       this.route.navigateByUrl( "/admin" )
+    } )
+  }
+  getAllCategory ()
+  {
+    this.categorys.getAllCategory().subscribe( ( data ) =>
+    {
+      this.categories = data
     } )
   }
 }

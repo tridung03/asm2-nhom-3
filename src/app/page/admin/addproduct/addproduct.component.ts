@@ -1,47 +1,52 @@
-import { Component } from '@angular/core';
-import { Iproduct } from 'src/app/common/product';
+import { Component, OnInit } from '@angular/core';
+import { Iproduct } from 'src/app/interface/product';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/service/product.service';
-import { category } from 'src/app/common/category';
 import { CategoryService } from 'src/app/category/category.service';
+import { category } from 'src/app/interface/category';
 
 @Component( {
   selector: 'app-addproduct',
   templateUrl: './addproduct.component.html',
   styleUrls: [ './addproduct.component.scss' ]
 } )
-export class AddproductComponent
+export class AddproductComponent implements OnInit
 {
-
   product: Iproduct = {
-    id: 0,
+
     price: 0,
     name: "",
     chitiet: "",
     categoryId: 0,
     img: "",
-  }
-  categories!: category[]
+  };
+  categories: category[] = [];
 
+  constructor (
+    private router: Router,
+    private productService: ProductService,
+    private categoryService: CategoryService
+  ) { }
 
-  constructor ( private router: Router,
-    private productSevice: ProductService, private category: CategoryService )
+  ngOnInit (): void
   {
-
+    this.getAllCategory();
   }
+
   getAllCategory ()
   {
-    this.category.getAllCategory().subscribe( ( data ) =>
+    this.categoryService.getAllCategory().subscribe( ( data ) =>
     {
-      this.categories = data
-    } )
+      this.categories = data;
+    } );
   }
-  onhandleadd (): void
+
+  onhandleadd ()
   {
-    this.productSevice.addProduct( this.product ).subscribe( () =>
+    this.productService.addProduct( this.product ).subscribe( () =>
     {
-      this.router.navigateByUrl( "/admin" )
-    } )
+      this.router.navigateByUrl( "/admin" );
+    } );
   }
 }

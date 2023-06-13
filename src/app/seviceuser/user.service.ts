@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Login, LoginResponse, User } from '../common/user';
+import { Login, LoginResponse, User } from '../interface/user';
 
 @Injectable( {
   providedIn: 'root'
@@ -16,9 +16,9 @@ export class UserService
   {
     return this.http.post<User>( "http://localhost:3000/signup", body );
   }
-  login ( credentials: Login ): Observable<LoginResponse>
+  login ( credentials: any ): Observable<any>
   {
-    return this.http.post<LoginResponse>( `${ this.apiUrl }/signin`, credentials );
+    return this.http.post<any>( `${ this.apiUrl }/signin`, credentials );
 
   }
   getUser ( id: number ): Observable<User>
@@ -35,6 +35,15 @@ export class UserService
   {
     return this.http.get<User[]>( "http://localhost:3000/users" );
   }
+  editUser ( body: User ): Observable<User>
+  {
+    const url = `${ this.apiUrl }/users/${ body.id }`;
+    return this.http.put<User>( url, body );
+  }
+  isAuthenticated ()
+  {
+    return JSON.parse( localStorage.getItem( "user" )! ) || null
+  }
   getUsername (): string
   {
     // Trả về tên người dùng đã đăng ký
@@ -47,7 +56,7 @@ export class UserService
     this.name = undefined;
     // Thực hiện các thao tác đăng xuất
     // Ví dụ: xóa token từ Local Storage, xóa thông tin người dùng đã lưu trữ, đặt trạng thái đăng nhập về false, vv.
-    localStorage.removeItem( 'accessToken' );
+    localStorage.removeItem( 'user' );
     localStorage.removeItem( 'name' );
     // Các thao tác khác liên quan đến việc đăng xuất
   }
@@ -57,7 +66,7 @@ export class UserService
   {
     // Kiểm tra xem người dùng đã đăng nhập hay chưa
     // Ví dụ: kiểm tra sự tồn tại của token xác thực trong Local Storage
-    const accessToken = localStorage.getItem( 'accessToken' );
+    const accessToken = localStorage.getItem( 'user' );
     return !!accessToken; // Trả về true nếu có token xác thực, ngược lại trả về false
   }
 }

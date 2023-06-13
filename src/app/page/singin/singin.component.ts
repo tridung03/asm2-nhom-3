@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Login } from 'src/app/common/user';
+import { Login, User } from 'src/app/interface/user';
 import { UserService } from 'src/app/seviceuser/user.service';
 
 @Component( {
@@ -11,66 +11,42 @@ import { UserService } from 'src/app/seviceuser/user.service';
 } )
 export class SinginComponent
 {
-  loginForm: FormGroup;
-  errorMessage: string | undefined;
+  submitted: boolean = false;
+  formSignin = this.fb.group( {
+    email: [ '', [ Validators.required, Validators.email ] ],
+    password: [ '', [ Validators.minLength( 6 ) ] ]
+  } );
 
-  constructor (
-    private formBuilder: FormBuilder, private router: Router,
-    private authenticationService: UserService
-  )
+  constructor ( private fb: FormBuilder, private router: Router, private auth: UserService )
   {
-    this.loginForm = this.formBuilder.group( {
-      email: [ '', Validators.required ],
-      password: [ '', Validators.required ]
-    } );
+
   }
-  onSubmit ()
-  {
-    if ( this.loginForm.invalid )
-    {
-      return;}
-    const users: Login = {
-      email: this.loginForm.value.email || "",
-      password: this.loginForm.value.password || "",
 
+  onHandleSubmit ()
+  {
+    this.submitted = true;
+    const user: Login = {
+      email: this.formSignin.value.email || "",
+      password: this.formSignin.value.password || ""
     }
+    if ( this.formSignin.valid )
+    {
+      this.auth.login( user ).subscribe( data =>
+      {
+        localStorage.setItem( 'user', JSON.stringify( data ) );
 
-    this.authenticationService.login( users )
-      .subscribe(
-        response =>
+        // Kiểm tra role sau khi đăng nhập
+        if ( data.user.role === 'admin' )
         {
-          // Xử lý phản hồi từ máy chủ
-          if ( response.accessToken )
-          {
-            // Lưu trữ token vào Local Storage
-            localStorage.setItem( 'accessToken', response.accessToken );
-
-            const isAdmin = response.user.role === "admin";
-            if ( isAdmin )
-            {
-              this.router.navigate( [ '/admin' ] ); // Chuyển hướng đến trang admin
-            } else
-            {
-              this.router.navigate( [ '/' ] ); // Chuyển hướng đến trang chủ
-            }
-            // Tiến hành chuyển hướng hoặc thực hiện các hành động khác sau khi xác thực thành công
-          } else
-          {
-            this.errorMessage = 'Invalid response from server';
-          }
-        },
-        error =>
+          // Nếu role là 'admin', chuyển hướng đến trang admin
+          this.router.navigate( [ '/admin' ] );
+        } else
         {
-          this.errorMessage = 'An error occurred';
+          // Nếu không phải 'admin', quay lại trang home
+          this.router.navigate( [ '/' ] );
         }
-      );
+      } );
+    }
   }
-  get email ()
-  {
-    return this.loginForm.get( "email" )
-  }
-  get password ()
-  {
-    return this.loginForm.get( "password" )
-  }
+
 }

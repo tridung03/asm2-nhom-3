@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/common/user';
+import { User } from 'src/app/interface/user';
 import { UserService } from 'src/app/seviceuser/user.service';
 
 @Component( {
@@ -48,7 +48,7 @@ export class SingupComponent
     this.productService.singup( user ).subscribe( ( result ) =>
     {
       console.log( result );
-
+      this.router.navigateByUrl( "/signin" )
 
     } )
 

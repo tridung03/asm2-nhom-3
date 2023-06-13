@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Iproduct, thanhtoan } from 'src/app/common/product';
+import { Iproduct, thanhtoan } from 'src/app/interface/product';
 import { ProductService } from 'src/app/service/product.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 

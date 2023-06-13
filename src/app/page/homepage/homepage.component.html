@@ -1,59 +1,64 @@
+<!-- Header -->
 
 <header class="bg-dark py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Shop in style</h1>
+            <h1 class="display-4 fw-bolder">Shop Hàng Điện tử </h1>
             <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
         </div>
     </div>
 </header>
-<section class="text-center mt-4 bg-light-subtle" *ngIf="category && category.length">
-    <div class="row rounded">
-        <a href="" class="col-2 shadow-sm" *ngFor="let category of category; index as i">
-            <img [src]="category.img" alt="" width="120">
-            <p>{{category.name}}</p>
-        </a>
-    </div>
-</section>
-<!-- Section-->
+
+<!-- Section -->
+
+
+<!-- Section -->
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
+        <!-- Search form -->
+        <form class="d-flex mb-4">
+            <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search"
+                [(ngModel)]="searchName">
+            <button class="btn btn-outline-dark" type="button" (click)="search()">Search</button>
+        </form>
+
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div *ngFor="let products of product;index as i" class="col mb-5">
+            <!-- Product cards -->
+            <div *ngFor="let product of product" class="col mb-5">
                 <div class="card h-100">
-                    <!-- Product image-->
-                    <img class="card-img-top" [src]="products.img" alt="..." />
-                    <!-- Product details-->
+                    <!-- Product image -->
+                    <img class="card-img-top" [src]="product.img" alt="..." />
+                    <!-- Product details -->
                     <div class="card-body p-4">
-
                         <div class="text-center">
-
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">{{products.chitiet}}</h5>
-                            <!-- Product price-->
-                            {{products.price}}
+                            <!-- Product name -->
+                            <h5 class="fw-bolder">{{ product.chitiet }}</h5>
+                            <!-- Product price -->
+                            {{ product.price }}
                         </div>
                     </div>
-                    <!-- Product actions-->
+                    <!-- Product actions -->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
-                                [routerLink]="'product/'+ products.id">{{products.name}}</a>
+                        <div class="text-center">
+                            <a class="btn btn-outline-dark mt-auto"
+                                [routerLink]="'product/' + product.id">{{ product.name }}</a>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <div *ngIf="product.length === 0" class="text-center">
+                <p>No products found.</p> <!-- Hiển thị thông báo khi không có kết quả tìm kiếm -->
+            </div>
         </div>
     </div>
 </section>
-<!-- Footer-->
 
+<!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website
+            2023</p>
     </div>
 </footer>
 
-
-
-<router-outlet />
+<router-outlet></router-outlet>

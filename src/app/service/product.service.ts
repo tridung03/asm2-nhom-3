@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { Observable } from "rxjs"
-import { Iproduct, thanhtoan } from '../common/product';
-import { Login, LoginResponse, User } from '../common/user';
-import { category} from'../common/category'
+import { Iproduct, thanhtoan } from '../interface/product';
+import { Login, LoginResponse, User } from '../interface/user';
 
 @Injectable( {
   providedIn: 'root'
@@ -14,9 +13,18 @@ export class ProductService
 
   constructor ( private http: HttpClient )
   { }
+  getRelatedProductsByCategory ( categoryId: string ): Observable<Iproduct[]>
+  {
+    // Gửi yêu cầu GET đến API để lấy các sản phẩm cùng danh mục
+    return this.http.get<Iproduct[]>( `${ this.apiUrl }/products?category=${ categoryId }` );
+  }
   getProduct (): Observable<Iproduct[]>
   {
     return this.http.get<Iproduct[]>( "http://localhost:3000/products" )
+  }
+  searchProducts ( keyword: string ): Observable<any[]>
+  {
+    return this.http.get<any[]>( `${ this.apiUrl }/products?search=${ keyword }` );
   }
   detailProduct ( id: number ): Observable<Iproduct>
   {
@@ -43,10 +51,41 @@ export class ProductService
   {
     return this.http.post<thanhtoan>( "http://localhost:3000/cart", body )
   }
-
-  //category
-  addCategory ( category: category ): Observable<category>
+  getCart ()
   {
-    return this.http.post<category>( "http://localhost:3000/category", category )
+    let cartJson = sessionStorage.getItem( "cart" );
+    if ( cartJson )
+    {
+      return JSON.parse( cartJson )
+    } else
+    {
+      return []
+    }
+  }
+  saveCart ( carts: any )
+  {
+    let cartJson = JSON.stringify( carts )
+    sessionStorage.setItem( "cart", cartJson )
+
+  }
+  getCartTotalPrice ()
+  {
+    let carts = this.getCart();
+    let total: number = 0;
+    carts.forEach( ( item: any ) =>
+    {
+      total += item.quantity * item.price;
+    } );
+    return total
+  }
+  getCartquantity ()
+  {
+    let carts = this.getCart();
+    let total: number = 0;
+    carts.forEach( ( item: any ) =>
+    {
+      total += item.quantity
+    } );
+    return total
   }
 }

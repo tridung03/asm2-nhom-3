@@ -20,6 +20,11 @@ import { CategoryListComponent } from './page/admin/category-list/category-list.
 import { AddcategoryComponent } from './page/admin/addcategory/addcategory.component';
 import { EditCategoryComponent } from './page/admin/edit-category/edit-category.component';
 
+import { EdituserComponent } from './page/admin/edituser/edituser.component';
+
+import { AuthGuard } from './auth.guard';
+
+
 const routes: Routes = [
   {
     path: '', component: BaseLayoutComponent, children: [
@@ -31,7 +36,7 @@ const routes: Routes = [
       {
         path: 'product', children: [
           { path: "", component: ProductpageComponent },
-          { path: ":id", component: DetaiproductComponent },
+          // { path: ":id", component: DetaiproductComponent },
 
         ]
       },
@@ -51,16 +56,16 @@ const routes: Routes = [
   },
 
   {
-    path: 'admin', component: AdminLayoutComponent, children: [
+    path: 'admin', component: AdminLayoutComponent, canActivate: [ AuthGuard ], children: [
 
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashbroadComponent },
       { path: 'listuser', component: ListuserComponent },
       { path: 'category', component: CategoryListComponent },
-      { path: 'addcategory', component: AddcategoryComponent },
+      { path: 'category/addcategory', component: AddcategoryComponent },
 
-      { path: 'editcategory/:id', component: EditCategoryComponent },
-
+      { path: 'category/editcategory/:id', component: EditCategoryComponent },
+      { path: 'listuser/edit/:id', component: EdituserComponent },
 
 
       { path: 'product', component: AdminProductComponent },
@@ -72,8 +77,8 @@ const routes: Routes = [
   { path: '**', component: NotFountComponent }
 ];
 
-@NgModule( {
-  imports: [ RouterModule.forRoot( routes ) ],
-  exports: [ RouterModule ]
-} )
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
 export class AppRoutingModule { }
